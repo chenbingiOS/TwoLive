@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01889A1A95A040F23EF258EB /* Pods_FwApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AF9687BCEB918E1905B222 /* Pods_FwApp.framework */; };
 		5426E19021420DCE008AF44A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5426E18F21420DCE008AF44A /* AppDelegate.m */; };
 		5426E19321420DCE008AF44A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5426E19221420DCE008AF44A /* ViewController.m */; };
 		5426E19621420DCE008AF44A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5426E19421420DCE008AF44A /* Main.storyboard */; };
 		5426E19821420DCF008AF44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5426E19721420DCF008AF44A /* Assets.xcassets */; };
 		5426E19B21420DCF008AF44A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5426E19921420DCF008AF44A /* LaunchScreen.storyboard */; };
 		5426E19E21420DCF008AF44A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5426E19D21420DCF008AF44A /* main.m */; };
+		8E5F4A2A2DC4257315B3863A /* libPods-FwApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +27,10 @@
 		5426E19A21420DCF008AF44A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5426E19C21420DCF008AF44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5426E19D21420DCF008AF44A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		65AF9687BCEB918E1905B222 /* Pods_FwApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FwApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5426E1A7214213AE008AF44A /* FwApp.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FwApp.pch; sourceTree = "<group>"; };
 		BA8E96F2C692180177CB7659 /* Pods-FwApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.release.xcconfig"; sourceTree = "<group>"; };
 		DE64301DFB46888C031105E9 /* Pods-FwApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FwApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01889A1A95A040F23EF258EB /* Pods_FwApp.framework in Frameworks */,
+				8E5F4A2A2DC4257315B3863A /* libPods-FwApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +74,7 @@
 				5426E19721420DCF008AF44A /* Assets.xcassets */,
 				5426E19921420DCF008AF44A /* LaunchScreen.storyboard */,
 				5426E19C21420DCF008AF44A /* Info.plist */,
+				5426E1A7214213AE008AF44A /* FwApp.pch */,
 				5426E19D21420DCF008AF44A /* main.m */,
 			);
 			path = FwApp;
@@ -90,7 +92,7 @@
 		E0B2CFEEBA9C4A215566A065 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				65AF9687BCEB918E1905B222 /* Pods_FwApp.framework */,
+				F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,7 +108,7 @@
 				5426E18721420DCE008AF44A /* Sources */,
 				5426E18821420DCE008AF44A /* Frameworks */,
 				5426E18921420DCE008AF44A /* Resources */,
-				E940C1AEB1A4387E9B62E80F /* [CP] Embed Pods Frameworks */,
+				5426E1A62142137A008AF44A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -181,23 +183,18 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E940C1AEB1A4387E9B62E80F /* [CP] Embed Pods Frameworks */ = {
+		5426E1A62142137A008AF44A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FwApp/Pods-FwApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
-			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FwApp/Pods-FwApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "if [ $CONFIGURATION == Release ]; then\necho \"Bumping build number...\"\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n#increment the build number (ie 115 to 116)\nbuildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number in $plist\"\nexit 2\nfi\nbuildnum=$(expr $buildnum + 1)\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Bumped build number to $buildnum\"\n\nelse\necho $CONFIGURATION \" build - Not bumping build number.\"\nfi\n\n# Without further ado, here’s the script. Add a Run Script step to your build steps, put it after your step to embed frameworks, set it to use /bin/sh and enter the following script:\n\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -351,14 +348,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7A62QP363D;
+				GCC_PREFIX_HEADER = FwApp/FwApp.pch;
 				INFOPLIST_FILE = FwApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fengwo.FwApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -369,14 +368,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7A62QP363D;
+				GCC_PREFIX_HEADER = FwApp/FwApp.pch;
 				INFOPLIST_FILE = FwApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fengwo.FwApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
