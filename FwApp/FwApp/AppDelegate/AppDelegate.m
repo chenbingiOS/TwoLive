@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AppDelegate+AppServer.h"
+#import "CBLaunch.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    //window显示之前调用
+    [[CBLaunch sharedInstance] launchBeforeShowWindow];
+    
+    // 设置控制器
+    [self _setup_Window];
+    [self _setup_RootVC];
+    
+    //window显示之后调用
+    [[CBLaunch sharedInstance] launchAfterShowWindow];
+    
     return YES;
 }
 

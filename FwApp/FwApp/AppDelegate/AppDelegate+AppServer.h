@@ -10,8 +10,24 @@
 
 @interface AppDelegate (AppServer)
 
-- (void)initWindow;
-- (void)initRootVC;
-- (void)initApperance;
+/**
+ 设置 root Window
+ */
+- (void)_setup_Window;
+
+/**
+ 设置 Window Root VC
+ */
+- (void)_setup_RootVC;
+
+/**
+ 设置全局属性
+ */
+- (void)_setup_Apperance;
+
+/**
+ 设置引导页面
+ */
+- (void)_setup_Guide;
 
 @end
