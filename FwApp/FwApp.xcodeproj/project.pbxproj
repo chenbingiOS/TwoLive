@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		540F1C3A214268C500AA408C /* CBTBC.m in Sources */ = {isa = PBXBuildFile; fileRef = 540F1C37214268C500AA408C /* CBTBC.m */; };
+		540F1C3B214268C500AA408C /* CBNVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 540F1C39214268C500AA408C /* CBNVC.m */; };
+		540F1C3E2142699700AA408C /* CBHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 540F1C3D2142699700AA408C /* CBHomeVC.m */; };
+		540F1C41214269A300AA408C /* CBVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 540F1C40214269A300AA408C /* CBVideoVC.m */; };
+		540F1C44214269C000AA408C /* CBAnchorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 540F1C43214269C000AA408C /* CBAnchorVC.m */; };
+		540F1C47214269CB00AA408C /* CBAttentionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 540F1C46214269CB00AA408C /* CBAttentionVC.m */; };
+		540F1C4A214269D500AA408C /* CBProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 540F1C49214269D500AA408C /* CBProfileVC.m */; };
+		540F1C5421426DBC00AA408C /* AppDelegate+AppServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 540F1C5221426DBC00AA408C /* AppDelegate+AppServer.m */; };
+		540F1C5921426E1100AA408C /* UIColor+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 540F1C5721426E1100AA408C /* UIColor+Color.m */; };
 		5426E19021420DCE008AF44A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5426E18F21420DCE008AF44A /* AppDelegate.m */; };
 		5426E19321420DCE008AF44A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5426E19221420DCE008AF44A /* ViewController.m */; };
 		5426E19621420DCE008AF44A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5426E19421420DCE008AF44A /* Main.storyboard */; };
@@ -17,6 +26,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		540F1C36214268C400AA408C /* CBNVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNVC.h; sourceTree = "<group>"; };
+		540F1C37214268C500AA408C /* CBTBC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTBC.m; sourceTree = "<group>"; };
+		540F1C38214268C500AA408C /* CBTBC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTBC.h; sourceTree = "<group>"; };
+		540F1C39214268C500AA408C /* CBNVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNVC.m; sourceTree = "<group>"; };
+		540F1C3C2142699700AA408C /* CBHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBHomeVC.h; sourceTree = "<group>"; };
+		540F1C3D2142699700AA408C /* CBHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBHomeVC.m; sourceTree = "<group>"; };
+		540F1C3F214269A300AA408C /* CBVideoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBVideoVC.h; sourceTree = "<group>"; };
+		540F1C40214269A300AA408C /* CBVideoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBVideoVC.m; sourceTree = "<group>"; };
+		540F1C42214269C000AA408C /* CBAnchorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBAnchorVC.h; sourceTree = "<group>"; };
+		540F1C43214269C000AA408C /* CBAnchorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBAnchorVC.m; sourceTree = "<group>"; };
+		540F1C45214269CB00AA408C /* CBAttentionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBAttentionVC.h; sourceTree = "<group>"; };
+		540F1C46214269CB00AA408C /* CBAttentionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBAttentionVC.m; sourceTree = "<group>"; };
+		540F1C48214269D500AA408C /* CBProfileVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBProfileVC.h; sourceTree = "<group>"; };
+		540F1C49214269D500AA408C /* CBProfileVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBProfileVC.m; sourceTree = "<group>"; };
+		540F1C5221426DBC00AA408C /* AppDelegate+AppServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+AppServer.m"; sourceTree = "<group>"; };
+		540F1C5321426DBC00AA408C /* AppDelegate+AppServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+AppServer.h"; sourceTree = "<group>"; };
+		540F1C5721426E1100AA408C /* UIColor+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Color.m"; sourceTree = "<group>"; };
+		540F1C5821426E1100AA408C /* UIColor+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Color.h"; sourceTree = "<group>"; };
 		5426E18B21420DCE008AF44A /* FwApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FwApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5426E18E21420DCE008AF44A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5426E18F21420DCE008AF44A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,6 +72,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		540F1C342142677D00AA408C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				540F1C3C2142699700AA408C /* CBHomeVC.h */,
+				540F1C3D2142699700AA408C /* CBHomeVC.m */,
+				540F1C3F214269A300AA408C /* CBVideoVC.h */,
+				540F1C40214269A300AA408C /* CBVideoVC.m */,
+				540F1C42214269C000AA408C /* CBAnchorVC.h */,
+				540F1C43214269C000AA408C /* CBAnchorVC.m */,
+				540F1C45214269CB00AA408C /* CBAttentionVC.h */,
+				540F1C46214269CB00AA408C /* CBAttentionVC.m */,
+				540F1C48214269D500AA408C /* CBProfileVC.h */,
+				540F1C49214269D500AA408C /* CBProfileVC.m */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		540F1C352142679100AA408C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				540F1C36214268C400AA408C /* CBNVC.h */,
+				540F1C39214268C500AA408C /* CBNVC.m */,
+				540F1C38214268C500AA408C /* CBTBC.h */,
+				540F1C37214268C500AA408C /* CBTBC.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		540F1C5521426DF800AA408C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				540F1C5621426E0800AA408C /* UIColor */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		540F1C5621426E0800AA408C /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				540F1C5821426E1100AA408C /* UIColor+Color.h */,
+				540F1C5721426E1100AA408C /* UIColor+Color.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		5426E18221420DCE008AF44A = {
 			isa = PBXGroup;
 			children = (
@@ -66,8 +138,9 @@
 		5426E18D21420DCE008AF44A /* FwApp */ = {
 			isa = PBXGroup;
 			children = (
-				5426E18E21420DCE008AF44A /* AppDelegate.h */,
-				5426E18F21420DCE008AF44A /* AppDelegate.m */,
+				5426E1A921421B04008AF44A /* Base */,
+				5426E1A821421AFC008AF44A /* AppDelegate */,
+				540F1C342142677D00AA408C /* Modules */,
 				5426E19121420DCE008AF44A /* ViewController.h */,
 				5426E19221420DCE008AF44A /* ViewController.m */,
 				5426E19421420DCE008AF44A /* Main.storyboard */,
@@ -78,6 +151,26 @@
 				5426E19D21420DCF008AF44A /* main.m */,
 			);
 			path = FwApp;
+			sourceTree = "<group>";
+		};
+		5426E1A821421AFC008AF44A /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				5426E18E21420DCE008AF44A /* AppDelegate.h */,
+				5426E18F21420DCE008AF44A /* AppDelegate.m */,
+				540F1C5321426DBC00AA408C /* AppDelegate+AppServer.h */,
+				540F1C5221426DBC00AA408C /* AppDelegate+AppServer.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		5426E1A921421B04008AF44A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				540F1C5521426DF800AA408C /* Category */,
+				540F1C352142679100AA408C /* VC */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		D3DB74AA1EC40C8D27104F3A /* Pods */ = {
@@ -203,9 +296,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				540F1C44214269C000AA408C /* CBAnchorVC.m in Sources */,
+				540F1C5921426E1100AA408C /* UIColor+Color.m in Sources */,
+				540F1C3B214268C500AA408C /* CBNVC.m in Sources */,
+				540F1C3A214268C500AA408C /* CBTBC.m in Sources */,
 				5426E19321420DCE008AF44A /* ViewController.m in Sources */,
+				540F1C47214269CB00AA408C /* CBAttentionVC.m in Sources */,
+				540F1C41214269A300AA408C /* CBVideoVC.m in Sources */,
 				5426E19E21420DCF008AF44A /* main.m in Sources */,
+				540F1C3E2142699700AA408C /* CBHomeVC.m in Sources */,
 				5426E19021420DCE008AF44A /* AppDelegate.m in Sources */,
+				540F1C5421426DBC00AA408C /* AppDelegate+AppServer.m in Sources */,
+				540F1C4A214269D500AA408C /* CBProfileVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
