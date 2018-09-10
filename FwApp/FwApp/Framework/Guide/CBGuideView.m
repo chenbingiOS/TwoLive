@@ -23,7 +23,7 @@
 
 @implementation CBGuideView
 
-DEF_SINGLETON(CBGuideView);
+DEF_SINGLETON(CBGuideView)
 
 #pragma mark - Public
 

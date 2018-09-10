@@ -12,7 +12,7 @@
 
 @implementation CBLaunch
 
-DEF_SINGLETON(CBLaunch);
+DEF_SINGLETON(CBLaunch)
 
 /**
  *  功能:window显示之前调用

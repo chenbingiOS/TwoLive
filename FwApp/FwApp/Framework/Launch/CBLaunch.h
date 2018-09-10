@@ -10,7 +10,7 @@
 
 @interface CBLaunch : NSObject
 
-AS_SINGLETON(CBLaunch);
+AS_SINGLETON(CBLaunch)
 
 /**
  *  功能:window显示之前调用

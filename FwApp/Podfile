@@ -8,6 +8,14 @@ pod 'YYKit'
 # 网络
 pod 'AFNetworking'
 pod 'YTKNetwork'
+# 提示
+pod 'MBProgressHUD'
+# 第三方登录
+pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'
+pod 'ShareSDK3/ShareSDKPlatforms/QQ'
+pod 'ShareSDK3/ShareSDKPlatforms/Twitter'
+pod 'ShareSDK3/ShareSDKPlatforms/Facebook'
+pod 'WeiXinPay'
 
 end
 

@@ -10,6 +10,7 @@
 #import "CBTBC.h"
 #import "CBNVC.h"
 #import "CBGuideView.h"
+#import "CBUrlArgumentsFilter.h"
 
 @implementation AppDelegate (AppServer)
 
@@ -103,6 +104,16 @@
     // 导航栏返回按钮
     [[UIBarButtonItem appearance] setTintColor:[UIColor backColor]];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[[UIImage imageNamed:@"jht_dly_fh"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+}
+
+#pragma mark - 接口初始化
+- (void)_setup_RequestAPI {
+    YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
+    config.baseUrl = @"http://fwtv.gttead.cn/";
+    if ([CBUserProfileVO sharedInstance].token.length > 0) {
+        CBUrlArgumentsFilter *urlFilter = [CBUrlArgumentsFilter filterWithArguments:@{@"token": [CBUserProfileVO sharedInstance].token}];
+        [config addUrlFilter:urlFilter];
+    } 
 }
 
 //#pragma mark - 数据初始化

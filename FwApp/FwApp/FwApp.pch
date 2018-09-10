@@ -10,10 +10,11 @@
 #define FwApp_h
 
 #ifdef __OBJC__
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "CBHeaders.h"
-#import "CBFuncDefine.h"
+
 #endif
 
 #endif /* FwApp_h */

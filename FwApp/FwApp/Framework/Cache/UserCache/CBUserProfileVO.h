@@ -10,7 +10,7 @@
 
 @interface CBUserProfileVO : NSObject <NSCoding>
 
-AS_SINGLETON(CBUserProfileVO);
+AS_SINGLETON(CBUserProfileVO)
 
 // 登录token
 @property (nonatomic, copy) NSString *token;            ///< APP登录Token

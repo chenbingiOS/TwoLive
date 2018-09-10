@@ -10,7 +10,7 @@
 
 @interface CBGuideView : NSObject
 
-AS_SINGLETON(CBGuideView);
+AS_SINGLETON(CBGuideView)
 @property (nonatomic, strong) UIWindow *window; ///< 指定显示在哪个Window上
 
 /**

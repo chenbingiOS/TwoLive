@@ -32,7 +32,6 @@
 		54531C6021460875005D87BA /* guide_3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54531C5A21460875005D87BA /* guide_3@3x.png */; };
 		54531C6121460875005D87BA /* guide_X2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54531C5B21460875005D87BA /* guide_X2@3x.png */; };
 		54531C6221460875005D87BA /* guide_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54531C5C21460875005D87BA /* guide_2@3x.png */; };
-		54531C742146194B005D87BA /* CBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531C732146194B005D87BA /* CBLoginVC.m */; };
 		54531C7D21461B8C005D87BA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 54531C7C21461B8C005D87BA /* libsqlite3.tbd */; };
 		54531C8B21464209005D87BA /* CBUserProfileVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531C8A21464209005D87BA /* CBUserProfileVO.m */; };
 		54531C8E21464221005D87BA /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531C8C21464221005D87BA /* NSObject+Coding.m */; };
@@ -44,6 +43,16 @@
 		54531CA421465286005D87BA /* CBRequestHeaderVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CA321465286005D87BA /* CBRequestHeaderVO.m */; };
 		54531CA7214655C9005D87BA /* CBUserProfileAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CA6214655C9005D87BA /* CBUserProfileAPI.m */; };
 		54531CAA214656F7005D87BA /* CBUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CA9214656F7005D87BA /* CBUrlArgumentsFilter.m */; };
+		54531CBB21467063005D87BA /* CBWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CAD21467063005D87BA /* CBWebVC.m */; };
+		54531CBC21467063005D87BA /* CBRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CB021467063005D87BA /* CBRegisterVC.m */; };
+		54531CBD21467063005D87BA /* CBRegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54531CB121467063005D87BA /* CBRegisterVC.xib */; };
+		54531CBE21467063005D87BA /* CBForgetPwdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54531CB421467063005D87BA /* CBForgetPwdVC.xib */; };
+		54531CBF21467063005D87BA /* CBForgetPwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CB521467063005D87BA /* CBForgetPwdVC.m */; };
+		54531CC021467063005D87BA /* CBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CB821467063005D87BA /* CBLoginVC.m */; };
+		54531CC121467063005D87BA /* CBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54531CB921467063005D87BA /* CBLoginVC.xib */; };
+		54531CC5214670A9005D87BA /* CBBaseWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CC4214670A8005D87BA /* CBBaseWebViewVC.m */; };
+		54531CC92146723A005D87BA /* UITextField+LeftImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CC821467239005D87BA /* UITextField+LeftImageView.m */; };
+		54531CCD214672D3005D87BA /* MBProgressHUD+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CCB214672D3005D87BA /* MBProgressHUD+HUD.m */; };
 		8E5F4A2A2DC4257315B3863A /* libPods-FwApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */; };
 /* End PBXBuildFile section */
 
@@ -93,8 +102,6 @@
 		54531C5A21460875005D87BA /* guide_3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_3@3x.png"; sourceTree = "<group>"; };
 		54531C5B21460875005D87BA /* guide_X2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_X2@3x.png"; sourceTree = "<group>"; };
 		54531C5C21460875005D87BA /* guide_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_2@3x.png"; sourceTree = "<group>"; };
-		54531C722146194B005D87BA /* CBLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBLoginVC.h; sourceTree = "<group>"; };
-		54531C732146194B005D87BA /* CBLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBLoginVC.m; sourceTree = "<group>"; };
 		54531C7C21461B8C005D87BA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		54531C8921464208005D87BA /* CBUserProfileVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBUserProfileVO.h; sourceTree = "<group>"; };
 		54531C8A21464209005D87BA /* CBUserProfileVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBUserProfileVO.m; sourceTree = "<group>"; };
@@ -116,6 +123,23 @@
 		54531CA6214655C9005D87BA /* CBUserProfileAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBUserProfileAPI.m; sourceTree = "<group>"; };
 		54531CA8214656F7005D87BA /* CBUrlArgumentsFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBUrlArgumentsFilter.h; sourceTree = "<group>"; };
 		54531CA9214656F7005D87BA /* CBUrlArgumentsFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBUrlArgumentsFilter.m; sourceTree = "<group>"; };
+		54531CAD21467063005D87BA /* CBWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBWebVC.m; sourceTree = "<group>"; };
+		54531CAE21467063005D87BA /* CBWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBWebVC.h; sourceTree = "<group>"; };
+		54531CB021467063005D87BA /* CBRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRegisterVC.m; sourceTree = "<group>"; };
+		54531CB121467063005D87BA /* CBRegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBRegisterVC.xib; sourceTree = "<group>"; };
+		54531CB221467063005D87BA /* CBRegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRegisterVC.h; sourceTree = "<group>"; };
+		54531CB421467063005D87BA /* CBForgetPwdVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBForgetPwdVC.xib; sourceTree = "<group>"; };
+		54531CB521467063005D87BA /* CBForgetPwdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBForgetPwdVC.m; sourceTree = "<group>"; };
+		54531CB621467063005D87BA /* CBForgetPwdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBForgetPwdVC.h; sourceTree = "<group>"; };
+		54531CB821467063005D87BA /* CBLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLoginVC.m; sourceTree = "<group>"; };
+		54531CB921467063005D87BA /* CBLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBLoginVC.xib; sourceTree = "<group>"; };
+		54531CBA21467063005D87BA /* CBLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLoginVC.h; sourceTree = "<group>"; };
+		54531CC3214670A8005D87BA /* CBBaseWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBaseWebViewVC.h; sourceTree = "<group>"; };
+		54531CC4214670A8005D87BA /* CBBaseWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBaseWebViewVC.m; sourceTree = "<group>"; };
+		54531CC721467239005D87BA /* UITextField+LeftImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+LeftImageView.h"; sourceTree = "<group>"; };
+		54531CC821467239005D87BA /* UITextField+LeftImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+LeftImageView.m"; sourceTree = "<group>"; };
+		54531CCB214672D3005D87BA /* MBProgressHUD+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+HUD.m"; sourceTree = "<group>"; };
+		54531CCC214672D3005D87BA /* MBProgressHUD+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+HUD.h"; sourceTree = "<group>"; };
 		BA8E96F2C692180177CB7659 /* Pods-FwApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.release.xcconfig"; sourceTree = "<group>"; };
 		DE64301DFB46888C031105E9 /* Pods-FwApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FwApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,8 +161,7 @@
 		540F1C342142677D00AA408C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				54531C722146194B005D87BA /* CBLoginVC.h */,
-				54531C732146194B005D87BA /* CBLoginVC.m */,
+				54531CAB21467063005D87BA /* Login */,
 				540F1C3C2142699700AA408C /* CBHomeVC.h */,
 				540F1C3D2142699700AA408C /* CBHomeVC.m */,
 				540F1C3F214269A300AA408C /* CBVideoVC.h */,
@@ -167,6 +190,8 @@
 		540F1C5521426DF800AA408C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				54531CCA214672D3005D87BA /* MBProgressHUD */,
+				54531CC621467239005D87BA /* UITextField */,
 				540F1C6121427A1600AA408C /* NSObject */,
 				540F1C5621426E0800AA408C /* UIColor */,
 			);
@@ -332,6 +357,7 @@
 		54531C95214649B7005D87BA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				54531CC2214670A1005D87BA /* View */,
 				54531C9E21465098005D87BA /* AES */,
 				54531C99214649C4005D87BA /* Tool */,
 			);
@@ -369,6 +395,83 @@
 			path = AES;
 			sourceTree = "<group>";
 		};
+		54531CAB21467063005D87BA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				54531CAC21467063005D87BA /* Web */,
+				54531CAF21467063005D87BA /* Register */,
+				54531CB321467063005D87BA /* Forget */,
+				54531CB721467063005D87BA /* Login */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		54531CAC21467063005D87BA /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				54531CAE21467063005D87BA /* CBWebVC.h */,
+				54531CAD21467063005D87BA /* CBWebVC.m */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		54531CAF21467063005D87BA /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				54531CB021467063005D87BA /* CBRegisterVC.m */,
+				54531CB121467063005D87BA /* CBRegisterVC.xib */,
+				54531CB221467063005D87BA /* CBRegisterVC.h */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		54531CB321467063005D87BA /* Forget */ = {
+			isa = PBXGroup;
+			children = (
+				54531CB421467063005D87BA /* CBForgetPwdVC.xib */,
+				54531CB521467063005D87BA /* CBForgetPwdVC.m */,
+				54531CB621467063005D87BA /* CBForgetPwdVC.h */,
+			);
+			path = Forget;
+			sourceTree = "<group>";
+		};
+		54531CB721467063005D87BA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				54531CBA21467063005D87BA /* CBLoginVC.h */,
+				54531CB821467063005D87BA /* CBLoginVC.m */,
+				54531CB921467063005D87BA /* CBLoginVC.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		54531CC2214670A1005D87BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54531CC3214670A8005D87BA /* CBBaseWebViewVC.h */,
+				54531CC4214670A8005D87BA /* CBBaseWebViewVC.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54531CC621467239005D87BA /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				54531CC721467239005D87BA /* UITextField+LeftImageView.h */,
+				54531CC821467239005D87BA /* UITextField+LeftImageView.m */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		54531CCA214672D3005D87BA /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				54531CCB214672D3005D87BA /* MBProgressHUD+HUD.m */,
+				54531CCC214672D3005D87BA /* MBProgressHUD+HUD.h */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		D3DB74AA1EC40C8D27104F3A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +502,7 @@
 				5426E18821420DCE008AF44A /* Frameworks */,
 				5426E18921420DCE008AF44A /* Resources */,
 				5426E1A62142137A008AF44A /* ShellScript */,
+				929EB5D4E75B18301C90F25C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -452,9 +556,12 @@
 				5426E19B21420DCF008AF44A /* LaunchScreen.storyboard in Resources */,
 				54531C5D21460875005D87BA /* guide_X3@3x.png in Resources */,
 				54531C6121460875005D87BA /* guide_X2@3x.png in Resources */,
+				54531CC121467063005D87BA /* CBLoginVC.xib in Resources */,
 				54531C6221460875005D87BA /* guide_2@3x.png in Resources */,
 				54531C5F21460875005D87BA /* guide_X1@3x.png in Resources */,
+				54531CBE21467063005D87BA /* CBForgetPwdVC.xib in Resources */,
 				5426E19821420DCF008AF44A /* Assets.xcassets in Resources */,
+				54531CBD21467063005D87BA /* CBRegisterVC.xib in Resources */,
 				5426E19621420DCE008AF44A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +600,26 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ $CONFIGURATION == Release ]; then\necho \"Bumping build number...\"\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n#increment the build number (ie 115 to 116)\nbuildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number in $plist\"\nexit 2\nfi\nbuildnum=$(expr $buildnum + 1)\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Bumped build number to $buildnum\"\n\nelse\necho $CONFIGURATION \" build - Not bumping build number.\"\nfi\n\n# Without further ado, here’s the script. Add a Run Script step to your build steps, put it after your step to embed frameworks, set it to use /bin/sh and enter the following script:\n\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone";
 		};
+		929EB5D4E75B18301C90F25C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FwApp/Pods-FwApp-resources.sh",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FwApp/Pods-FwApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -506,26 +633,32 @@
 				540F1C3B214268C500AA408C /* CBNVC.m in Sources */,
 				540F1C5D2142765E00AA408C /* CBLaunch.m in Sources */,
 				54531C912146424A005D87BA /* NSObject+Class.m in Sources */,
-				54531C742146194B005D87BA /* CBLoginVC.m in Sources */,
 				540F1C3A214268C500AA408C /* CBTBC.m in Sources */,
+				54531CBB21467063005D87BA /* CBWebVC.m in Sources */,
 				5426E19321420DCE008AF44A /* ViewController.m in Sources */,
 				540F1C47214269CB00AA408C /* CBAttentionVC.m in Sources */,
+				54531CBC21467063005D87BA /* CBRegisterVC.m in Sources */,
 				54531C9D21464DA2005D87BA /* CBRequestAPI.m in Sources */,
 				540F1C41214269A300AA408C /* CBVideoVC.m in Sources */,
+				54531CCD214672D3005D87BA /* MBProgressHUD+HUD.m in Sources */,
 				5426E19E21420DCF008AF44A /* main.m in Sources */,
 				540F1C6921427DF500AA408C /* CBGuideView.m in Sources */,
 				54531CAA214656F7005D87BA /* CBUrlArgumentsFilter.m in Sources */,
 				540F1C6C21427F0100AA408C /* CBGuideViewCell.m in Sources */,
+				54531CC92146723A005D87BA /* UITextField+LeftImageView.m in Sources */,
 				540F1C3E2142699700AA408C /* CBHomeVC.m in Sources */,
 				54531C8B21464209005D87BA /* CBUserProfileVO.m in Sources */,
 				5426E19021420DCE008AF44A /* AppDelegate.m in Sources */,
+				54531CC021467063005D87BA /* CBLoginVC.m in Sources */,
 				54531CA121465098005D87BA /* AESCipher.m in Sources */,
 				54531CA421465286005D87BA /* CBRequestHeaderVO.m in Sources */,
 				54531C9421464934005D87BA /* CBUserProfileLogic.m in Sources */,
 				540F1C5421426DBC00AA408C /* AppDelegate+AppServer.m in Sources */,
 				54531CA7214655C9005D87BA /* CBUserProfileAPI.m in Sources */,
+				54531CC5214670A9005D87BA /* CBBaseWebViewVC.m in Sources */,
 				540F1C4A214269D500AA408C /* CBProfileVC.m in Sources */,
 				540F1C6421427A4000AA408C /* NSObject+PerformBlock.m in Sources */,
+				54531CBF21467063005D87BA /* CBForgetPwdVC.m in Sources */,
 				54531C8E21464221005D87BA /* NSObject+Coding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,19 +11,17 @@
 
 @implementation CBUserProfileVO
 
-DEF_SINGLETON(CBUserProfileVO);
-
-- (void)reloadUserProfileWithNetwork {
-    
-}
-
 DWObjectCodingImplmentation
+
+DEF_SINGLETON(CBUserProfileVO)
 
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{@"ID" : @"id",
              @"token" : @"api_token"};
 }
 
-
+//- (void)reloadUserProfileWithNetwork {
+//
+//}
 
 @end

@@ -11,10 +11,9 @@
 #import <objc/runtime.h>
 
 @implementation NSObject (Coding)
+
 - (void)enumPropertyList:(void(^)(id key, id value))emunBlock {
-    
     [self enumClass:^(__unsafe_unretained Class cl, BOOL *stop) {
-        
         [self propertyForClass:cl finish:^(PropertyModel *pModel) {
             NSString *attributeTypeString = pModel.propertyType;
             NSString *name = pModel.name;
@@ -38,6 +37,7 @@
         [aCoder encodeObject:value forKey:key];
     }];
 }
+
 - (nullable instancetype)coding_decode:(NSCoder *)aDecoder {
     [self enumPropertyList:^(id key, id value) {
         [self setValue:[aDecoder decodeObjectForKey:key] forKey:key];
