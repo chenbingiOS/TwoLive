@@ -21,28 +21,22 @@
 }
 
 #pragma mark - rootVC
-- (void)_setup_RootVC {
-//    if ([CBLiveUserConfig getOwnID]) {
-//        self.rootVC = [CBTBC new];
-//        self.window.rootViewController = self.rootVC;
-//    } else{
-//        CBLoginVC *vc = [CBLoginVC new];
-//        CBNVC *navc = [[CBNVC alloc] initWithRootViewController:vc];
-//        self.window.rootViewController = navc;
-//    }
+- (void)_setup_RootVC {    
+    self.rootVC = [CBTBC new];
+    self.window.rootViewController = self.rootVC;
 }
 
 #pragma mark - 引导页面
 - (void)_setup_Guide {
     NSMutableArray *images = [NSMutableArray new];
     if (iPhoneX) {
-        [images addObject:[UIImage imageNamed:@"guide_X1"]];
-        [images addObject:[UIImage imageNamed:@"guide_X2"]];
-        [images addObject:[UIImage imageNamed:@"guide_X3"]];
+        [images addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"guide_X1@3x" ofType:@"png"]]];
+        [images addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"guide_X2@3x" ofType:@"png"]]];
+        [images addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"guide_X3@3x" ofType:@"png"]]];
     } else {
-        [images addObject:[UIImage imageNamed:@"guide_1"]];
-        [images addObject:[UIImage imageNamed:@"guide_2"]];
-        [images addObject:[UIImage imageNamed:@"guide_3"]];
+        [images addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"guide_1@3x" ofType:@"png"]]];
+        [images addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"guide_2@3x" ofType:@"png"]]];
+        [images addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"guide_3@3x" ofType:@"png"]]];
     }
     [[CBGuideView sharedInstance] showGuideViewWithImages:images
                         andButtonTitle:@"立即体验"
@@ -60,17 +54,21 @@
     [UINavigationBar appearance].translucent = NO;
     [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor titleNormalColor]}];
-//    if (iPhoneX) {
-//        [[UINavigationBar appearance] setBackgroundImage:[[UIImage imageNamed:@"jht_iphoenx"] imageWithRenderingMode:UIImageRenderingModeAutomatic] forBarMetrics:UIBarMetricsDefault];
-//    } else {
-//        [[UINavigationBar appearance] setBackgroundImage:[[UIImage imageNamed:@"jht_sy_ztl"] imageWithRenderingMode:UIImageRenderingModeAutomatic] forBarMetrics:UIBarMetricsDefault];
-//    }
+    /*
+    if (iPhoneX) {
+        [[UINavigationBar appearance] setBackgroundImage:[[UIImage imageNamed:@"jht_iphoenx"] imageWithRenderingMode:UIImageRenderingModeAutomatic] forBarMetrics:UIBarMetricsDefault];
+    } else {
+        [[UINavigationBar appearance] setBackgroundImage:[[UIImage imageNamed:@"jht_sy_ztl"] imageWithRenderingMode:UIImageRenderingModeAutomatic] forBarMetrics:UIBarMetricsDefault];
+    }
+    */
 
-//    // 标签栏
-//    UIImage *tabBarBackground = [UIImage imageNamed:@"tabbar_bg"]; //需要的图片中包含黑线用作背景
-//    [[UITabBar appearance] setBackgroundImage:tabBarBackground];
-//    UIImage *tabBarShadow = [UIImage imageNamed:@"tabbar_bg_line"]; //需要的图片是一个1像素的透明图片
-//    [[UITabBar appearance] setShadowImage:tabBarShadow];
+    /*
+    // 标签栏
+    UIImage *tabBarBackground = [UIImage imageNamed:@"tabbar_bg"]; //需要的图片中包含黑线用作背景
+    [[UITabBar appearance] setBackgroundImage:tabBarBackground];
+    UIImage *tabBarShadow = [UIImage imageNamed:@"tabbar_bg_line"]; //需要的图片是一个1像素的透明图片
+    [[UITabBar appearance] setShadowImage:tabBarShadow];
+     */
 
     // 标签栏按钮
     UITabBarItem *item = [UITabBarItem appearance];
@@ -85,7 +83,7 @@
 
     // 按钮
     [[UIButton appearance] setExclusiveTouch:YES];  // 禁止按钮同时触发
-    [[UIButton appearance] setShowsTouchWhenHighlighted:YES];   // 按钮被点击高亮提醒
+    [[UIButton appearance] setShowsTouchWhenHighlighted:NO];   // 按钮被点击高亮提醒
 
 //    [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = KWhiteColor;
 

@@ -26,6 +26,12 @@
 		5426E19821420DCF008AF44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5426E19721420DCF008AF44A /* Assets.xcassets */; };
 		5426E19B21420DCF008AF44A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5426E19921420DCF008AF44A /* LaunchScreen.storyboard */; };
 		5426E19E21420DCF008AF44A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5426E19D21420DCF008AF44A /* main.m */; };
+		54531C5D21460875005D87BA /* guide_X3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54531C5721460875005D87BA /* guide_X3@3x.png */; };
+		54531C5E21460875005D87BA /* guide_1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54531C5821460875005D87BA /* guide_1@3x.png */; };
+		54531C5F21460875005D87BA /* guide_X1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54531C5921460875005D87BA /* guide_X1@3x.png */; };
+		54531C6021460875005D87BA /* guide_3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54531C5A21460875005D87BA /* guide_3@3x.png */; };
+		54531C6121460875005D87BA /* guide_X2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54531C5B21460875005D87BA /* guide_X2@3x.png */; };
+		54531C6221460875005D87BA /* guide_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54531C5C21460875005D87BA /* guide_2@3x.png */; };
 		8E5F4A2A2DC4257315B3863A /* libPods-FwApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +75,12 @@
 		5426E19C21420DCF008AF44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5426E19D21420DCF008AF44A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5426E1A7214213AE008AF44A /* FwApp.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FwApp.pch; sourceTree = "<group>"; };
+		54531C5721460875005D87BA /* guide_X3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_X3@3x.png"; sourceTree = "<group>"; };
+		54531C5821460875005D87BA /* guide_1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_1@3x.png"; sourceTree = "<group>"; };
+		54531C5921460875005D87BA /* guide_X1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_X1@3x.png"; sourceTree = "<group>"; };
+		54531C5A21460875005D87BA /* guide_3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_3@3x.png"; sourceTree = "<group>"; };
+		54531C5B21460875005D87BA /* guide_X2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_X2@3x.png"; sourceTree = "<group>"; };
+		54531C5C21460875005D87BA /* guide_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_2@3x.png"; sourceTree = "<group>"; };
 		BA8E96F2C692180177CB7659 /* Pods-FwApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.release.xcconfig"; sourceTree = "<group>"; };
 		DE64301DFB46888C031105E9 /* Pods-FwApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FwApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +206,7 @@
 				5426E1A921421B04008AF44A /* Framework */,
 				5426E1A821421AFC008AF44A /* AppDelegate */,
 				540F1C342142677D00AA408C /* Modules */,
+				54531C5621460875005D87BA /* Resource */,
 				5426E19121420DCE008AF44A /* ViewController.h */,
 				5426E19221420DCE008AF44A /* ViewController.m */,
 				5426E19421420DCE008AF44A /* Main.storyboard */,
@@ -227,6 +240,27 @@
 				540F1C5521426DF800AA408C /* Category */,
 			);
 			path = Framework;
+			sourceTree = "<group>";
+		};
+		54531C5621460875005D87BA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				54531C6321460C56005D87BA /* guide */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		54531C6321460C56005D87BA /* guide */ = {
+			isa = PBXGroup;
+			children = (
+				54531C5821460875005D87BA /* guide_1@3x.png */,
+				54531C5C21460875005D87BA /* guide_2@3x.png */,
+				54531C5A21460875005D87BA /* guide_3@3x.png */,
+				54531C5921460875005D87BA /* guide_X1@3x.png */,
+				54531C5B21460875005D87BA /* guide_X2@3x.png */,
+				54531C5721460875005D87BA /* guide_X3@3x.png */,
+			);
+			path = guide;
 			sourceTree = "<group>";
 		};
 		D3DB74AA1EC40C8D27104F3A /* Pods */ = {
@@ -306,7 +340,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54531C5E21460875005D87BA /* guide_1@3x.png in Resources */,
+				54531C6021460875005D87BA /* guide_3@3x.png in Resources */,
 				5426E19B21420DCF008AF44A /* LaunchScreen.storyboard in Resources */,
+				54531C5D21460875005D87BA /* guide_X3@3x.png in Resources */,
+				54531C6121460875005D87BA /* guide_X2@3x.png in Resources */,
+				54531C6221460875005D87BA /* guide_2@3x.png in Resources */,
+				54531C5F21460875005D87BA /* guide_X1@3x.png in Resources */,
 				5426E19821420DCF008AF44A /* Assets.xcassets in Resources */,
 				5426E19621420DCE008AF44A /* Main.storyboard in Resources */,
 			);
