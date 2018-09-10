@@ -5,6 +5,9 @@ def pods
 
 # UI框架
 pod 'YYKit'
+# 网络
+pod 'AFNetworking'
+pod 'YTKNetwork'
 
 end
 
