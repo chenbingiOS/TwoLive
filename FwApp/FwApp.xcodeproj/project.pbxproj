@@ -34,6 +34,16 @@
 		54531C6221460875005D87BA /* guide_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54531C5C21460875005D87BA /* guide_2@3x.png */; };
 		54531C742146194B005D87BA /* CBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531C732146194B005D87BA /* CBLoginVC.m */; };
 		54531C7D21461B8C005D87BA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 54531C7C21461B8C005D87BA /* libsqlite3.tbd */; };
+		54531C8B21464209005D87BA /* CBUserProfileVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531C8A21464209005D87BA /* CBUserProfileVO.m */; };
+		54531C8E21464221005D87BA /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531C8C21464221005D87BA /* NSObject+Coding.m */; };
+		54531C912146424A005D87BA /* NSObject+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531C8F21464249005D87BA /* NSObject+Class.m */; };
+		54531C9421464934005D87BA /* CBUserProfileLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531C9321464934005D87BA /* CBUserProfileLogic.m */; };
+		54531C98214649C2005D87BA /* CBArchiverTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531C96214649C2005D87BA /* CBArchiverTool.m */; };
+		54531C9D21464DA2005D87BA /* CBRequestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531C9C21464DA2005D87BA /* CBRequestAPI.m */; };
+		54531CA121465098005D87BA /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531C9F21465098005D87BA /* AESCipher.m */; };
+		54531CA421465286005D87BA /* CBRequestHeaderVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CA321465286005D87BA /* CBRequestHeaderVO.m */; };
+		54531CA7214655C9005D87BA /* CBUserProfileAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CA6214655C9005D87BA /* CBUserProfileAPI.m */; };
+		54531CAA214656F7005D87BA /* CBUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CA9214656F7005D87BA /* CBUrlArgumentsFilter.m */; };
 		8E5F4A2A2DC4257315B3863A /* libPods-FwApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +96,26 @@
 		54531C722146194B005D87BA /* CBLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBLoginVC.h; sourceTree = "<group>"; };
 		54531C732146194B005D87BA /* CBLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBLoginVC.m; sourceTree = "<group>"; };
 		54531C7C21461B8C005D87BA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		54531C8921464208005D87BA /* CBUserProfileVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBUserProfileVO.h; sourceTree = "<group>"; };
+		54531C8A21464209005D87BA /* CBUserProfileVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBUserProfileVO.m; sourceTree = "<group>"; };
+		54531C8C21464221005D87BA /* NSObject+Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Coding.m"; sourceTree = "<group>"; };
+		54531C8D21464221005D87BA /* NSObject+Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Coding.h"; sourceTree = "<group>"; };
+		54531C8F21464249005D87BA /* NSObject+Class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Class.m"; sourceTree = "<group>"; };
+		54531C9021464249005D87BA /* NSObject+Class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Class.h"; sourceTree = "<group>"; };
+		54531C9221464934005D87BA /* CBUserProfileLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBUserProfileLogic.h; sourceTree = "<group>"; };
+		54531C9321464934005D87BA /* CBUserProfileLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBUserProfileLogic.m; sourceTree = "<group>"; };
+		54531C96214649C2005D87BA /* CBArchiverTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBArchiverTool.m; sourceTree = "<group>"; };
+		54531C97214649C2005D87BA /* CBArchiverTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBArchiverTool.h; sourceTree = "<group>"; };
+		54531C9B21464DA2005D87BA /* CBRequestAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBRequestAPI.h; sourceTree = "<group>"; };
+		54531C9C21464DA2005D87BA /* CBRequestAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBRequestAPI.m; sourceTree = "<group>"; };
+		54531C9F21465098005D87BA /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
+		54531CA021465098005D87BA /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
+		54531CA221465286005D87BA /* CBRequestHeaderVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBRequestHeaderVO.h; sourceTree = "<group>"; };
+		54531CA321465286005D87BA /* CBRequestHeaderVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBRequestHeaderVO.m; sourceTree = "<group>"; };
+		54531CA5214655C9005D87BA /* CBUserProfileAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBUserProfileAPI.h; sourceTree = "<group>"; };
+		54531CA6214655C9005D87BA /* CBUserProfileAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBUserProfileAPI.m; sourceTree = "<group>"; };
+		54531CA8214656F7005D87BA /* CBUrlArgumentsFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBUrlArgumentsFilter.h; sourceTree = "<group>"; };
+		54531CA9214656F7005D87BA /* CBUrlArgumentsFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBUrlArgumentsFilter.m; sourceTree = "<group>"; };
 		BA8E96F2C692180177CB7659 /* Pods-FwApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.release.xcconfig"; sourceTree = "<group>"; };
 		DE64301DFB46888C031105E9 /* Pods-FwApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FwApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +203,10 @@
 		540F1C6121427A1600AA408C /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
+				54531C8D21464221005D87BA /* NSObject+Coding.h */,
+				54531C8C21464221005D87BA /* NSObject+Coding.m */,
+				54531C9021464249005D87BA /* NSObject+Class.h */,
+				54531C8F21464249005D87BA /* NSObject+Class.m */,
 				540F1C6221427A4000AA408C /* NSObject+PerformBlock.h */,
 				540F1C6321427A4000AA408C /* NSObject+PerformBlock.m */,
 			);
@@ -241,12 +275,14 @@
 		5426E1A921421B04008AF44A /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				54531C9A21464D95005D87BA /* Network */,
 				54531C7521461951005D87BA /* Cache */,
 				540F1C5E2142772E00AA408C /* Define */,
 				540F1C5A2142761C00AA408C /* Launch */,
 				540F1C6621427DDB00AA408C /* Guide */,
 				540F1C352142679100AA408C /* VC */,
 				540F1C5521426DF800AA408C /* Category */,
+				54531C95214649B7005D87BA /* Tools */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -275,8 +311,62 @@
 		54531C7521461951005D87BA /* Cache */ = {
 			isa = PBXGroup;
 			children = (
+				54531C88214641F1005D87BA /* UserCache */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		54531C88214641F1005D87BA /* UserCache */ = {
+			isa = PBXGroup;
+			children = (
+				54531C8921464208005D87BA /* CBUserProfileVO.h */,
+				54531C8A21464209005D87BA /* CBUserProfileVO.m */,
+				54531C9221464934005D87BA /* CBUserProfileLogic.h */,
+				54531C9321464934005D87BA /* CBUserProfileLogic.m */,
+				54531CA5214655C9005D87BA /* CBUserProfileAPI.h */,
+				54531CA6214655C9005D87BA /* CBUserProfileAPI.m */,
+			);
+			path = UserCache;
+			sourceTree = "<group>";
+		};
+		54531C95214649B7005D87BA /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				54531C9E21465098005D87BA /* AES */,
+				54531C99214649C4005D87BA /* Tool */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		54531C99214649C4005D87BA /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				54531C97214649C2005D87BA /* CBArchiverTool.h */,
+				54531C96214649C2005D87BA /* CBArchiverTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		54531C9A21464D95005D87BA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				54531C9B21464DA2005D87BA /* CBRequestAPI.h */,
+				54531C9C21464DA2005D87BA /* CBRequestAPI.m */,
+				54531CA8214656F7005D87BA /* CBUrlArgumentsFilter.h */,
+				54531CA9214656F7005D87BA /* CBUrlArgumentsFilter.m */,
+				54531CA221465286005D87BA /* CBRequestHeaderVO.h */,
+				54531CA321465286005D87BA /* CBRequestHeaderVO.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		54531C9E21465098005D87BA /* AES */ = {
+			isa = PBXGroup;
+			children = (
+				54531CA021465098005D87BA /* AESCipher.h */,
+				54531C9F21465098005D87BA /* AESCipher.m */,
+			);
+			path = AES;
 			sourceTree = "<group>";
 		};
 		D3DB74AA1EC40C8D27104F3A /* Pods */ = {
@@ -412,21 +502,31 @@
 			files = (
 				540F1C44214269C000AA408C /* CBAnchorVC.m in Sources */,
 				540F1C5921426E1100AA408C /* UIColor+Color.m in Sources */,
+				54531C98214649C2005D87BA /* CBArchiverTool.m in Sources */,
 				540F1C3B214268C500AA408C /* CBNVC.m in Sources */,
 				540F1C5D2142765E00AA408C /* CBLaunch.m in Sources */,
+				54531C912146424A005D87BA /* NSObject+Class.m in Sources */,
 				54531C742146194B005D87BA /* CBLoginVC.m in Sources */,
 				540F1C3A214268C500AA408C /* CBTBC.m in Sources */,
 				5426E19321420DCE008AF44A /* ViewController.m in Sources */,
 				540F1C47214269CB00AA408C /* CBAttentionVC.m in Sources */,
+				54531C9D21464DA2005D87BA /* CBRequestAPI.m in Sources */,
 				540F1C41214269A300AA408C /* CBVideoVC.m in Sources */,
 				5426E19E21420DCF008AF44A /* main.m in Sources */,
 				540F1C6921427DF500AA408C /* CBGuideView.m in Sources */,
+				54531CAA214656F7005D87BA /* CBUrlArgumentsFilter.m in Sources */,
 				540F1C6C21427F0100AA408C /* CBGuideViewCell.m in Sources */,
 				540F1C3E2142699700AA408C /* CBHomeVC.m in Sources */,
+				54531C8B21464209005D87BA /* CBUserProfileVO.m in Sources */,
 				5426E19021420DCE008AF44A /* AppDelegate.m in Sources */,
+				54531CA121465098005D87BA /* AESCipher.m in Sources */,
+				54531CA421465286005D87BA /* CBRequestHeaderVO.m in Sources */,
+				54531C9421464934005D87BA /* CBUserProfileLogic.m in Sources */,
 				540F1C5421426DBC00AA408C /* AppDelegate+AppServer.m in Sources */,
+				54531CA7214655C9005D87BA /* CBUserProfileAPI.m in Sources */,
 				540F1C4A214269D500AA408C /* CBProfileVC.m in Sources */,
 				540F1C6421427A4000AA408C /* NSObject+PerformBlock.m in Sources */,
+				54531C8E21464221005D87BA /* NSObject+Coding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
