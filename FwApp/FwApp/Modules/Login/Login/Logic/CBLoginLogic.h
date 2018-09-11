@@ -32,4 +32,9 @@
                        password:(NSString *)password
                      repassword:(NSString *)repassword
                 completionBlock:(CBNetworkCompletionBlock)completionBlock;
+
+// 第三方登录
+- (void)logicThirdLoginWithParam:(NSDictionary *)param
+                 completionBlock:(CBNetworkCompletionBlock)completionBlock;
+    
 @end

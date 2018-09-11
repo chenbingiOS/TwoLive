@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CBLogic.h"
 
 @class CBUserProfileVO;
-@interface CBUserProfileLogic : NSObject
+@interface CBUserProfileLogic : CBLogic
 
-+ (CBUserProfileVO *)myProfile;
-+ (void)saveProfile:(CBUserProfileVO *)user;
-+ (void)clearProfile;
+- (void)logicUserProfileWithToken:(NSString *)token
+                  completionBlock:(CBNetworkCompletionBlock)completionBlock;
 
 @end

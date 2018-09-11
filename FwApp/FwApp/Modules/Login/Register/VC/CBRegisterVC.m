@@ -44,7 +44,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupUI];    
+    [self setupUI];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(actionChangeBtnState) name:UITextFieldTextDidChangeNotification object:nil];
 }
 
@@ -61,118 +61,42 @@
 
 - (IBAction)actionCode:(id)sender {
     [self.view endEditing:YES];
-    if (self.phoneTextField.text.length!=11){
-        [MBProgressHUD showAutoMessage:@"手机号输入错误"];
-        return;
-    }
-    if (self.phoneTextField.text.length == 0){
-        [MBProgressHUD showAutoMessage:@"请输入手机号"];
-        return;
-    }
     
-    {
-        self.authCodeTime = 60;
-        self.authCodeBtn.userInteractionEnabled = NO;
-        [self showLoading];
-        @weakify(self);
-        [self.logic logicVerCodeWithUserName:self.phoneTextField.text andStatus:@"register0" completionBlock:^(id aResponseObject, NSError *error) {
-            @strongify(self);
-            [self hideLoading];
-            self.authCodeBtn.userInteractionEnabled = YES;
-            if (error) {
-                [MBProgressHUD showAutoMessage:error.domain];
-            } else {
-                if (self.messsageTimer == nil) {
-                    self.messsageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(actionTimeCountDown) userInfo:nil repeats:YES];
-                }
+    self.authCodeTime = 60;
+    self.authCodeBtn.userInteractionEnabled = NO;
+    [self showLoading];
+    @weakify(self);
+    [self.logic logicVerCodeWithUserName:self.phoneTextField.text andStatus:@"register0" completionBlock:^(id aResponseObject, NSError *error) {
+        @strongify(self);
+        [self hideLoading];
+        self.authCodeBtn.userInteractionEnabled = YES;
+        if (error) {
+            [MBProgressHUD showAutoMessage:error.domain];
+        } else {
+            if (self.messsageTimer == nil) {
+                self.messsageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(actionTimeCountDown) userInfo:nil repeats:YES];
             }
-        }];
-    }
+        }
+    }];
 }
 
 - (IBAction)actionRegister:(id)sender {
     [self.view endEditing:YES];
-    if (self.phoneTextField.text.length == 0){
-        [MBProgressHUD showAutoMessage:@"请输入手机号"];
-        return;
-    }
-    if (self.phoneTextField.text.length!=11){
-        [MBProgressHUD showAutoMessage:@"手机号输入错误"];
-        return;
-    }
-    if (self.codeTextField.text.length == 0){
-        [MBProgressHUD showAutoMessage:@"请输入验证码"];
-        return;
-    }
-    if (self.pwdTextField.text.length == 0){
-        [MBProgressHUD showAutoMessage:@"请输入6-16位登录密码"];
-        return;
-    }
+    
     if (self.agreementBtn.selected == NO) {
         [MBProgressHUD showAutoMessage:@"请先同意用户协议"];
         return;
     }
     
-    {
-        [self showLoading];
-        [self.logic logicRegisterWithUserName:self.phoneTextField.text andPassword:self.pwdTextField.text verCode:self.codeTextField.text completionBlock:^(id aResponseObject, NSError *error) {
-            [self hideLoading];
-            if (error) {
-                
-            } else {
-                [MBProgressHUD showAutoMessage:error.domain];
-            }
-        }];
-    }
-}
-
-- (void)httpGetUserInfoWithToken:(NSString *)token {
-//    NSString *url = urlGetUserInfo;
-//    NSDictionary *param = @{@"token": token};
-//    [PPNetworkHelper POST:url parameters:param success:^(id responseObject) {
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
-//        NSNumber *code = [responseObject valueForKey:@"code"];
-//        if ([code isEqualToNumber:@200]) {
-//            NSDictionary *info = [responseObject valueForKey:@"data"];
-//            CBLiveUser *userInfo = [[CBLiveUser alloc] initWithDic:info];
-//            [CBLiveUserConfig saveProfile:userInfo];
-//
-//            [self loginENClient];
-//            [self loginJPUSH];
-//            [self loginUI];
-//        } else {
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            NSString *descrp = responseObject[@"descrp"];
-//            [MBProgressHUD showAutoMessage:descrp];
-//        }
-//    } failure:^(NSError *error) {
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
-//        [MBProgressHUD showAutoMessage:@"登录失败"];
-//    }];
-}
-
-// 环信登录
-- (void)loginENClient{
-//    [[EMClient sharedClient] loginWithUsername:[CBLiveUserConfig getHXuid] password:[CBLiveUserConfig getHXpwd] completion:^(NSString *aUsername, EMError *aError) {
-//        if (aError) {
-//            NSLog(@"环信登录错误--%@",aError.errorDescription);
-//        } else {
-//            NSLog(@"环信登录成功--%@",aUsername);
-//        }
-//    }];
-}
-
-// 登录极光
-- (void)loginJPUSH {
-//    NSString *aliasStr = [NSString stringWithFormat:@"%@PUSH", [CBLiveUserConfig getOwnID]];
-    //    [JPUSHService setAlias:aliasStr callbackSelector:nil object:nil];
-}
-
-// 本地UI登录
-- (void)loginUI {
-    CBTBC *tbc = [CBTBC new];
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    window.rootViewController = tbc;
+    [self showLoading];
+    [self.logic logicRegisterWithUserName:self.phoneTextField.text andPassword:self.pwdTextField.text verCode:self.codeTextField.text completionBlock:^(id aResponseObject, NSError *error) {
+        [self hideLoading];
+        if (error) {
+            [MBProgressHUD showAutoMessage:error.domain];
+        } else {
+            [MBProgressHUD showAutoMessage:@"验证码已发送，请注意查收"];
+        }
+    }];
 }
 
 - (IBAction)actionUserAgreement:(id)sender {
@@ -221,7 +145,7 @@
 }
 
 //获取验证码倒计时
--(void)actionTimeCountDown{
+- (void)actionTimeCountDown{
     [self.authCodeBtn setTitle:[NSString stringWithFormat:@"%ds", (int)self.authCodeTime] forState:UIControlStateNormal];
     self.authCodeBtn.userInteractionEnabled = NO;
     if (self.authCodeTime <= 0) {

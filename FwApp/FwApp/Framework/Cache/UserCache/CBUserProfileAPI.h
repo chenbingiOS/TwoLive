@@ -11,4 +11,6 @@
 
 @interface CBUserProfileAPI : CBRequestAPI
 
+- (instancetype)initWithToken:(NSString *)token;
+
 @end

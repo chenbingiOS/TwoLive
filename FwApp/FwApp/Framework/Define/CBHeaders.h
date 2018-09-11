@@ -12,7 +12,7 @@
 #import "CBFuncDefine.h"                // 全局宏
 #import <YYKit/YYKit.h>                 // UI库
 #import "UIColor+Color.h"               // 颜色
-#import "CBUserProfileVO.h"             // 用户信息
+#import "CBUserProfileManager.h"        // 用户信息
 #import "MBProgressHUD+HUD.h"           // HUD
 #import "UIViewController+loading.h"    // HUD
 

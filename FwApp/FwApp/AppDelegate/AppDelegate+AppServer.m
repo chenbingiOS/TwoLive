@@ -24,7 +24,7 @@
 
 #pragma mark - rootVC
 - (void)_setup_RootVC {
-    if ([CBUserProfileVO sharedInstance].token) {
+    if ([CBUserProfileManager userProfile].token) {
         self.rootVC = [CBTBC new];
         self.window.rootViewController = self.rootVC;
     } else{
@@ -58,8 +58,8 @@
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
     config.debugLogEnabled = YES;
     config.baseUrl = @"http://fwtv.gttead.cn/";
-    if ([CBUserProfileVO sharedInstance].token) {
-        CBUrlArgumentsFilter *urlFilter = [CBUrlArgumentsFilter filterWithArguments:@{@"token": [CBUserProfileVO sharedInstance].token}];
+    if ([CBUserProfileManager userProfile].token) {
+        CBUrlArgumentsFilter *urlFilter = [CBUrlArgumentsFilter filterWithArguments:@{@"token": [CBUserProfileManager userProfile].token}];
         [config addUrlFilter:urlFilter];
     } 
 }

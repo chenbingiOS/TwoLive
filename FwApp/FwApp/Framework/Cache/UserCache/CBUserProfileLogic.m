@@ -7,25 +7,23 @@
 //
 
 #import "CBUserProfileLogic.h"
-#import "CBUserProfileVO.h"
-// Tools
-#import "CBArchiverTool.h"
-
-static NSString * const kUserProfileConfigFilePath = @"kUserProfileConfigFilePath";
-static NSString * const kUserProfileConfigKey = @"kUserProfileConfigKey";
+#import "CBUserProfileAPI.h"
 
 @implementation CBUserProfileLogic
 
-+ (CBUserProfileVO *)myProfile {
-    return [CBArchiverTool unarchiverPath:kUserProfileConfigFilePath key:kUserProfileConfigKey];
-}
-
-+ (void)saveProfile:(CBUserProfileVO *)user {
-    [CBArchiverTool archiverObject:user key:kUserProfileConfigKey filePath:kUserProfileConfigFilePath];
-}
-
-+ (void)clearProfile {
-    [CBArchiverTool removeArchiverObjectFilePath:kUserProfileConfigFilePath];
+// 用户信息
+- (void)logicUserProfileWithToken:(NSString *)token
+               completionBlock:(CBNetworkCompletionBlock)completionBlock {
+    
+    CBUserProfileAPI *api = [[CBUserProfileAPI alloc] initWithToken:token];
+    [api startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+        if (completionBlock) {
+            completionBlock(request.responseObject, nil);
+        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
 
 @end

@@ -60,6 +60,8 @@
 		54531CE721475F33005D87BA /* UIViewController+loading.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CE621475F32005D87BA /* UIViewController+loading.m */; };
 		54531CEA21477102005D87BA /* CBVerCodeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CE921477102005D87BA /* CBVerCodeAPI.m */; };
 		54531CEF214774CA005D87BA /* CBForgetAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CEE214774CA005D87BA /* CBForgetAPI.m */; };
+		54531CF521479825005D87BA /* CBUserProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CF421479825005D87BA /* CBUserProfileManager.m */; };
+		54531CF82147A373005D87BA /* CBThirdLoginAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CF72147A373005D87BA /* CBThirdLoginAPI.m */; };
 		8E5F4A2A2DC4257315B3863A /* libPods-FwApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +163,10 @@
 		54531CE921477102005D87BA /* CBVerCodeAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBVerCodeAPI.m; sourceTree = "<group>"; };
 		54531CED214774CA005D87BA /* CBForgetAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBForgetAPI.h; sourceTree = "<group>"; };
 		54531CEE214774CA005D87BA /* CBForgetAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBForgetAPI.m; sourceTree = "<group>"; };
+		54531CF321479825005D87BA /* CBUserProfileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBUserProfileManager.h; sourceTree = "<group>"; };
+		54531CF421479825005D87BA /* CBUserProfileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBUserProfileManager.m; sourceTree = "<group>"; };
+		54531CF62147A373005D87BA /* CBThirdLoginAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBThirdLoginAPI.h; sourceTree = "<group>"; };
+		54531CF72147A373005D87BA /* CBThirdLoginAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBThirdLoginAPI.m; sourceTree = "<group>"; };
 		BA8E96F2C692180177CB7659 /* Pods-FwApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.release.xcconfig"; sourceTree = "<group>"; };
 		DE64301DFB46888C031105E9 /* Pods-FwApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FwApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -367,6 +373,8 @@
 		54531C88214641F1005D87BA /* UserCache */ = {
 			isa = PBXGroup;
 			children = (
+				54531CF321479825005D87BA /* CBUserProfileManager.h */,
+				54531CF421479825005D87BA /* CBUserProfileManager.m */,
 				54531C8921464208005D87BA /* CBUserProfileVO.h */,
 				54531C8A21464209005D87BA /* CBUserProfileVO.m */,
 				54531C9221464934005D87BA /* CBUserProfileLogic.h */,
@@ -517,6 +525,8 @@
 			children = (
 				54531CD321467872005D87BA /* CBLoginAPI.h */,
 				54531CD421467872005D87BA /* CBLoginAPI.m */,
+				54531CF62147A373005D87BA /* CBThirdLoginAPI.h */,
+				54531CF72147A373005D87BA /* CBThirdLoginAPI.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -759,6 +769,7 @@
 				54531CC92146723A005D87BA /* UITextField+LeftImageView.m in Sources */,
 				540F1C3E2142699700AA408C /* CBHomeVC.m in Sources */,
 				54531C8B21464209005D87BA /* CBUserProfileVO.m in Sources */,
+				54531CF82147A373005D87BA /* CBThirdLoginAPI.m in Sources */,
 				5426E19021420DCE008AF44A /* AppDelegate.m in Sources */,
 				54531CC021467063005D87BA /* CBLoginVC.m in Sources */,
 				54531CA121465098005D87BA /* AESCipher.m in Sources */,
@@ -773,6 +784,7 @@
 				54531CD22146783D005D87BA /* CBLoginLogic.m in Sources */,
 				54531CBF21467063005D87BA /* CBForgetPwdVC.m in Sources */,
 				54531C8E21464221005D87BA /* NSObject+Coding.m in Sources */,
+				54531CF521479825005D87BA /* CBUserProfileManager.m in Sources */,
 				54531CE721475F33005D87BA /* UIViewController+loading.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

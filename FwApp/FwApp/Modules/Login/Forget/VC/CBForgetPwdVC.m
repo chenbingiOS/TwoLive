@@ -68,8 +68,8 @@
     }
 }
 
-//获取验证码倒计时
--(void)actionTimeCountDown{
+// 获取验证码倒计时
+- (void)actionTimeCountDown {
     [self.codeButton setTitle:[NSString stringWithFormat:@"%ds", (int)self.authCodeTime] forState:UIControlStateNormal];
     self.codeButton.userInteractionEnabled = NO;
     if (self.authCodeTime <= 0) {
@@ -86,74 +86,41 @@
 - (IBAction)actionGetCode:(id)sender {
     [self.view endEditing:YES];
     
-    if (self.phoneTextField.text.length!=11){
-        [MBProgressHUD showAutoMessage:@"手机号输入错误"];
-        return;
-    }
-    if (self.phoneTextField.text.length == 0){
-        [MBProgressHUD showAutoMessage:@"请输入手机号"];
-        return;
-    }
-    
-    {
-        self.authCodeTime = 60;
-        self.codeButton.userInteractionEnabled = NO;
-        [self showLoading];
-        @weakify(self);
-        [self.logic logicVerCodeWithUserName:self.phoneTextField.text andStatus:@"forgetPassword0" completionBlock:^(id aResponseObject, NSError *error) {
-            @strongify(self);
-            self.codeButton.userInteractionEnabled = YES;
-            [self hideLoading];
-            if (error) {
-                [MBProgressHUD showAutoMessage:error.domain];
-            } else {
-                if (self.messsageTimer == nil) {
-                    self.messsageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(actionTimeCountDown) userInfo:nil repeats:YES];
-                }
+    self.authCodeTime = 60;
+    self.codeButton.userInteractionEnabled = NO;
+    [self showLoading];
+    @weakify(self);
+    [self.logic logicVerCodeWithUserName:self.phoneTextField.text andStatus:@"forgetPassword0" completionBlock:^(id aResponseObject, NSError *error) {
+        @strongify(self);
+        self.codeButton.userInteractionEnabled = YES;
+        [self hideLoading];
+        if (error) {
+            [MBProgressHUD showAutoMessage:error.domain];
+        } else {
+            if (self.messsageTimer == nil) {
+                self.messsageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(actionTimeCountDown) userInfo:nil repeats:YES];
             }
-        }];
-    }
+        }
+    }];
 }
 
 - (IBAction)actionOKPwd:(id)sender {
     [self.view endEditing:YES];
-    if (self.phoneTextField.text.length == 0){
-        [MBProgressHUD showAutoMessage:@"请输入手机号"];
-        return;
-    }
-    if (self.phoneTextField.text.length!=11){
-        [MBProgressHUD showAutoMessage:@"手机号输入错误"];
-        return;
-    }
-    if (self.codeTextField.text.length == 0){
-        [MBProgressHUD showAutoMessage:@"请输入验证码"];
-        return;
-    }
-    if (self.pwdTextField.text.length == 0){
-        [MBProgressHUD showAutoMessage:@"请输入6-16位登录密码"];
-        return;
-    }
-    if (self.checkPwdTextField.text.length == 0){
-        [MBProgressHUD showAutoMessage:@"请输入6-16位登录密码"];
-        return;
-    }
     
-    {
-        [self showLoading];
-        @weakify(self);
-        [self.logic logicForgetWithUserName:self.phoneTextField.text verCode:self.codeTextField.text password:self.pwdTextField.text repassword:self.checkPwdTextField.text completionBlock:^(id aResponseObject, NSError *error) {
-            @strongify(self);
-            [self hideLoading];
-            if (error) {
-                [MBProgressHUD showAutoMessage:error.domain];
-            } else {
-                [MBProgressHUD showAutoMessage:@"密码重置成功"];
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [self.navigationController popViewControllerAnimated:YES];
-                });
-            }
-        }];
-    }
+    [self showLoading];
+    @weakify(self);
+    [self.logic logicForgetWithUserName:self.phoneTextField.text verCode:self.codeTextField.text password:self.pwdTextField.text repassword:self.checkPwdTextField.text completionBlock:^(id aResponseObject, NSError *error) {
+        @strongify(self);
+        [self hideLoading];
+        if (error) {
+            [MBProgressHUD showAutoMessage:error.domain];
+        } else {
+            [MBProgressHUD showAutoMessage:@"密码重置成功"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.navigationController popViewControllerAnimated:YES];
+            });
+        }
+    }];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

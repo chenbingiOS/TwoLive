@@ -8,29 +8,24 @@
 
 #import "CBUserProfileAPI.h"
 
-@implementation CBUserProfileAPI {
-    NSString *_userId;
-}
+@interface CBUserProfileAPI ()
 
-- (id)initWithUserId:(NSString *)userId {
+@property (nonatomic, copy) NSString *token;
+
+@end
+
+@implementation CBUserProfileAPI
+
+- (instancetype)initWithToken:(NSString *)token {
     self = [super init];
     if (self) {
-        _userId = userId;
+        _token = token;
     }
     return self;
 }
 
 - (NSString *)requestUrl {
     return @"/Api/User/get_userinfo0";
-}
-
-- (id)requestArgument {
-    return @{ @"id": _userId };
-}
-
-- (id)jsonValidator {
-    return @{ @"nick": [NSString class],
-              @"level": [NSNumber class] };
 }
 
 //- (NSInteger)cacheTimeInSeconds {
