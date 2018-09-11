@@ -97,6 +97,7 @@
         if (error) {
             [MBProgressHUD showAutoMessage:error.domain];
         } else {
+            [MBProgressHUD showAutoMessage:@"验证码已发送，请注意查收"];
             if (self.messsageTimer == nil) {
                 self.messsageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(actionTimeCountDown) userInfo:nil repeats:YES];
             }

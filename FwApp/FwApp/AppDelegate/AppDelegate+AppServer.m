@@ -56,7 +56,6 @@
 #pragma mark - 接口初始化
 - (void)_setup_RequestAPI {
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
-    config.debugLogEnabled = YES;
     config.baseUrl = @"http://fwtv.gttead.cn/";
     if ([CBUserProfileManager userProfile].token) {
         CBUrlArgumentsFilter *urlFilter = [CBUrlArgumentsFilter filterWithArguments:@{@"token": [CBUserProfileManager userProfile].token}];

@@ -45,9 +45,11 @@
 
 // 本地UI登录
 - (void)loginUI {
-    CBTBC *tbc = [CBTBC new];
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    window.rootViewController = tbc;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.45f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        CBTBC *tbc = [CBTBC new];
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        window.rootViewController = tbc;
+    });
 }
 
 // 刷新用户用户信息
@@ -85,7 +87,9 @@
             completionBlock(nil, error);
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
+        if (completionBlock) {
+            completionBlock(nil, request.error);
+        }
     }];
 }
 
@@ -123,7 +127,6 @@
             NSError *error = [NSError errorWithDomain:api.message code:api.code.integerValue userInfo:nil];
             completionBlock(nil, error);
         }
-
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         if (completionBlock) {
             completionBlock(nil, request.error);

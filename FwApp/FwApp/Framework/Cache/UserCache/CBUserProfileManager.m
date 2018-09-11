@@ -24,6 +24,13 @@ static NSString * const kUserProfileConfigKey = @"kUserProfileConfigKey";
 
 @implementation CBUserProfileManager
 
+- (CBUserProfileLogic *)logic {
+    if (!_logic) {
+        _logic = [CBUserProfileLogic new];
+    }
+    return _logic;
+}
+
 DEF_SINGLETON(CBUserProfileManager)
 
 + (CBUserProfileVO *)userProfile {
@@ -53,7 +60,7 @@ DEF_SINGLETON(CBUserProfileManager)
     }
     
     [[CBUserProfileManager sharedInstance].logic logicUserProfileWithToken:token completionBlock:^(id aResponseObject, NSError *error) {
-        CBUserProfileVO *vo = [CBUserProfileVO modelWithJSON:aResponseObject];
+        CBUserProfileVO *vo = [CBUserProfileVO modelWithJSON:aResponseObject[@"data"]];
         [CBUserProfileManager saveProfile:vo];
         [CBUserProfileManager sharedInstance].userProfileVO = vo;
         

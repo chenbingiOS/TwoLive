@@ -16,13 +16,14 @@
                completionBlock:(CBNetworkCompletionBlock)completionBlock {
     
     CBUserProfileAPI *api = [[CBUserProfileAPI alloc] initWithToken:token];
-    [api startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
+    [api startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {        
         if (completionBlock) {
             completionBlock(request.responseObject, nil);
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
+        if (completionBlock) {
+            completionBlock(nil, request.error);
+        }
     }];
 }
 

@@ -122,7 +122,10 @@
         if (error) {
             [MBProgressHUD showAutoMessage:error.domain];
         } else {
-            
+            self.view.alpha = 1;
+            [UIView animateWithDuration:0.45f animations:^{
+                self.view.alpha = 0;
+            }];
         }
     }];
 }
