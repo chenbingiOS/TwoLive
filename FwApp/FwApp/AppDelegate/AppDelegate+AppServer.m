@@ -11,6 +11,7 @@
 #import "CBNVC.h"
 #import "CBGuideView.h"
 #import "CBUrlArgumentsFilter.h"
+#import "CBLoginVC.h"
 
 @implementation AppDelegate (AppServer)
 
@@ -22,9 +23,15 @@
 }
 
 #pragma mark - rootVC
-- (void)_setup_RootVC {    
-    self.rootVC = [CBTBC new];
-    self.window.rootViewController = self.rootVC;
+- (void)_setup_RootVC {
+    if ([CBUserProfileVO sharedInstance].token) {
+        self.rootVC = [CBTBC new];
+        self.window.rootViewController = self.rootVC;
+    } else{
+        CBLoginVC *vc = [CBLoginVC new];
+        CBNVC *navc = [[CBNVC alloc] initWithRootViewController:vc];
+        self.window.rootViewController = navc;
+    }
 }
 
 #pragma mark - 引导页面
@@ -46,71 +53,12 @@
                   andButtonBorderColor:[UIColor clearColor]];
 }
 
-#pragma mark - 全局外观
-- (void)_setup_Apperance {
-    // 状态栏黑色
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
-
-    // 导航栏
-    [UINavigationBar appearance].translucent = NO;
-    [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor titleNormalColor]}];
-    /*
-    if (iPhoneX) {
-        [[UINavigationBar appearance] setBackgroundImage:[[UIImage imageNamed:@"jht_iphoenx"] imageWithRenderingMode:UIImageRenderingModeAutomatic] forBarMetrics:UIBarMetricsDefault];
-    } else {
-        [[UINavigationBar appearance] setBackgroundImage:[[UIImage imageNamed:@"jht_sy_ztl"] imageWithRenderingMode:UIImageRenderingModeAutomatic] forBarMetrics:UIBarMetricsDefault];
-    }
-    */
-
-    /*
-    // 标签栏
-    UIImage *tabBarBackground = [UIImage imageNamed:@"tabbar_bg"]; //需要的图片中包含黑线用作背景
-    [[UITabBar appearance] setBackgroundImage:tabBarBackground];
-    UIImage *tabBarShadow = [UIImage imageNamed:@"tabbar_bg_line"]; //需要的图片是一个1像素的透明图片
-    [[UITabBar appearance] setShadowImage:tabBarShadow];
-     */
-
-    // 标签栏按钮
-    UITabBarItem *item = [UITabBarItem appearance];
-    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    [textAttrs addEntriesFromDictionary:@{NSForegroundColorAttributeName : [UIColor titleNormalColor]}];
-    [textAttrs addEntriesFromDictionary:@{NSFontAttributeName : [UIFont systemFontOfSize:11.0]}];
-    [item setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
-    NSMutableDictionary *selectTextAttrs = [NSMutableDictionary dictionary];
-    [selectTextAttrs addEntriesFromDictionary:@{NSForegroundColorAttributeName : [UIColor titleSelectColor]}];
-    [selectTextAttrs addEntriesFromDictionary:@{NSFontAttributeName : [UIFont systemFontOfSize:11.0]}];
-    [item setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
-
-    // 按钮
-    [[UIButton appearance] setExclusiveTouch:YES];  // 禁止按钮同时触发
-    [[UIButton appearance] setShowsTouchWhenHighlighted:NO];   // 按钮被点击高亮提醒
-
-//    [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = KWhiteColor;
-
-    // iOS 11 ScrollView 偏移量
-    if (@available(iOS 11.0, *)){
-        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
-    }
-
-    // TableView
-    // 关闭Cell高度估算
-    [UITableView appearance].estimatedRowHeight = 0;
-    [UITableView appearance].estimatedSectionHeaderHeight = 0;
-    [UITableView appearance].estimatedSectionFooterHeight = 0;
-    // 关系cell点击效果
-    [[UITableViewCell appearance] setSelectionStyle:UITableViewCellSelectionStyleNone];
-
-    // 导航栏返回按钮
-    [[UIBarButtonItem appearance] setTintColor:[UIColor backColor]];
-    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[[UIImage imageNamed:@"jht_dly_fh"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-}
-
 #pragma mark - 接口初始化
 - (void)_setup_RequestAPI {
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
+    config.debugLogEnabled = YES;
     config.baseUrl = @"http://fwtv.gttead.cn/";
-    if ([CBUserProfileVO sharedInstance].token.length > 0) {
+    if ([CBUserProfileVO sharedInstance].token) {
         CBUrlArgumentsFilter *urlFilter = [CBUrlArgumentsFilter filterWithArguments:@{@"token": [CBUserProfileVO sharedInstance].token}];
         [config addUrlFilter:urlFilter];
     } 
@@ -175,24 +123,66 @@
 //    return @"This is an attachment";
 //}
 
+
+#pragma mark - 全局外观
+- (void)_setup_Apperance {
+    // 状态栏黑色
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+    
+    // 导航栏
+    [UINavigationBar appearance].translucent = NO;
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor titleNormalColor]}];
+    /*
+     if (iPhoneX) {
+     [[UINavigationBar appearance] setBackgroundImage:[[UIImage imageNamed:@"jht_iphoenx"] imageWithRenderingMode:UIImageRenderingModeAutomatic] forBarMetrics:UIBarMetricsDefault];
+     } else {
+     [[UINavigationBar appearance] setBackgroundImage:[[UIImage imageNamed:@"jht_sy_ztl"] imageWithRenderingMode:UIImageRenderingModeAutomatic] forBarMetrics:UIBarMetricsDefault];
+     }
+     */
+    
+    /*
+     // 标签栏
+     UIImage *tabBarBackground = [UIImage imageNamed:@"tabbar_bg"]; //需要的图片中包含黑线用作背景
+     [[UITabBar appearance] setBackgroundImage:tabBarBackground];
+     UIImage *tabBarShadow = [UIImage imageNamed:@"tabbar_bg_line"]; //需要的图片是一个1像素的透明图片
+     [[UITabBar appearance] setShadowImage:tabBarShadow];
+     */
+    
+    // 标签栏按钮
+    UITabBarItem *item = [UITabBarItem appearance];
+    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
+    [textAttrs addEntriesFromDictionary:@{NSForegroundColorAttributeName : [UIColor titleNormalColor]}];
+    [textAttrs addEntriesFromDictionary:@{NSFontAttributeName : [UIFont systemFontOfSize:11.0]}];
+    [item setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
+    NSMutableDictionary *selectTextAttrs = [NSMutableDictionary dictionary];
+    [selectTextAttrs addEntriesFromDictionary:@{NSForegroundColorAttributeName : [UIColor titleSelectColor]}];
+    [selectTextAttrs addEntriesFromDictionary:@{NSFontAttributeName : [UIFont systemFontOfSize:11.0]}];
+    [item setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
+    
+    // 按钮
+    [[UIButton appearance] setExclusiveTouch:YES];  // 禁止按钮同时触发
+    [[UIButton appearance] setShowsTouchWhenHighlighted:NO];   // 按钮被点击高亮提醒
+    
+    //    [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = KWhiteColor;
+    
+    // iOS 11 ScrollView 偏移量
+    if (@available(iOS 11.0, *)){
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    }
+    
+    // TableView
+    // 关闭Cell高度估算
+    [UITableView appearance].estimatedRowHeight = 0;
+    [UITableView appearance].estimatedSectionHeaderHeight = 0;
+    [UITableView appearance].estimatedSectionFooterHeight = 0;
+    // 关系cell点击效果
+    [[UITableViewCell appearance] setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
+    // 导航栏返回按钮
+    [[UIBarButtonItem appearance] setTintColor:[UIColor backColor]];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[[UIImage imageNamed:@"jht_dly_fh"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+}
+
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

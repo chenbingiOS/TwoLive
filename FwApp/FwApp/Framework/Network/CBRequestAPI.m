@@ -12,7 +12,41 @@
 
 @implementation CBRequestAPI
 
--(instancetype)init{
+#pragma mark ————— 定义返回数据格式，若是加密要用HTTP接受 —————
+- (YTKResponseSerializerType)responseSerializerType {
+//    if (self.isOpenAES) {
+//        return YTKResponseSerializerTypeHTTP;
+//    }
+    return YTKResponseSerializerTypeJSON;
+}
+
+#pragma mark ————— 默认请求方式 POST —————
+- (YTKRequestMethod)requestMethod{
+    return YTKRequestMethodPOST;
+}
+
+#pragma mark ————— 默认请求体是自身转json —————
+- (id)requestArgument {
+    return [self modelToJSONObject];
+}
+
+#pragma mark ————— 请求失败过滤器 —————
+- (void)requestFailedFilter{
+    //失败处理器
+}
+
+//#pragma mark ————— 请求成功过滤器 —————
+//- (void)requestCompleteFilter{
+//    //解密
+//    if (_isOpenAES) {
+//        self.result = aesDecryptWithData(self.responseData);
+//    } else {
+//        self.result = self.responseJSONObject;
+//    }
+//}
+
+/*
+- (instancetype)init{
     self = [super init];
     if (self) {
         _isOpenAES = NO;
@@ -54,41 +88,11 @@
     return  isSuccess;
 }
 
-#pragma mark ————— 定义返回数据格式，若是加密要用HTTP接受 —————
-- (YTKResponseSerializerType)responseSerializerType {
-    if (self.isOpenAES) {
-        return YTKResponseSerializerTypeHTTP;
-    }
-    return YTKResponseSerializerTypeJSON;
-}
 
-#pragma mark ————— 默认请求方式 POST —————
-- (YTKRequestMethod)requestMethod{
-    return YTKRequestMethodPOST;
-}
 
-#pragma mark ————— 默认请求体是自身转json —————
-- (id)requestArgument {
-    return [self modelToJSONObject];
-}
-
-#pragma mark ————— 请求失败过滤器 —————
-- (void)requestFailedFilter{
-    //失败处理器
-}
-
-#pragma mark ————— 请求成功过滤器 —————
-- (void)requestCompleteFilter{
-    //解密
-    if (_isOpenAES) {
-        self.result = aesDecryptWithData(self.responseData);
-    } else {
-        self.result = self.responseJSONObject;
-    }
-}
 
 #pragma mark ————— 非加密时也要传输的头部内容 也可能不需要，暂时保留 —————
-- (NSDictionary<NSString *,NSString *> *)requestHeaderFieldValueDictionary{
+- (NSDictionary <NSString *, NSString *> *)requestHeaderFieldValueDictionary{
     //加密header部分
     NSString *contentStr = [[CBRequestHeaderVO new] modelToJSONString];
     NSString *AESStr = aesEncrypt(contentStr);
@@ -112,5 +116,5 @@
     [request setHTTPBody:bodyData];
     return request;    
 }
-
+*/
 @end

@@ -30,4 +30,9 @@
  */
 - (void)_setup_Guide;
 
+/**
+ 网络初始化
+ */
+- (void)_setup_RequestAPI;
+
 @end

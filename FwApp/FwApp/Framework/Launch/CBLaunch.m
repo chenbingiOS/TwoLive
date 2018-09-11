@@ -17,7 +17,10 @@ DEF_SINGLETON(CBLaunch)
 /**
  *  功能:window显示之前调用
  */
-- (void)launchBeforeShowWindow {}
+- (void)launchBeforeShowWindow {
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appDelegate _setup_RequestAPI];
+}
 
 /**
  *  功能:window显示之后调用

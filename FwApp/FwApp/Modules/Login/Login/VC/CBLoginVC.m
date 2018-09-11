@@ -12,6 +12,8 @@
 #import "CBWebVC.h"
 #import "CBTBC.h"
 #import "CBForgetPwdVC.h"
+// Logic
+#import "CBLoginLogic.h"
 // User
 #import "CBUserProfileVO.h"
 #import "CBUserProfileLogic.h"
@@ -20,7 +22,7 @@
 // Third
 #import <ShareSDKExtension/SSEThirdPartyLoginHelper.h>
 #import <ShareSDKExtension/ShareSDK+Extension.h>
-#import <Bugly/Bugly.h>
+//#import <Bugly/Bugly.h>
 
 //渠道ID
 #define registerFlag @"11343"
@@ -35,9 +37,18 @@
 @property (weak, nonatomic) IBOutlet UIButton *wbBtn;
 @property (weak, nonatomic) IBOutlet UIButton *qqBtn;
 
+@property (nonatomic,strong) CBLoginLogic *logic; //逻辑层
+
 @end
 
 @implementation CBLoginVC
+
+- (CBLoginLogic *)logic {
+    if (!_logic) {
+        _logic = [CBLoginLogic new];
+    }
+    return _logic;
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -94,60 +105,64 @@
 
 - (IBAction)actionPolicy:(id)sender {
     [self.view endEditing:YES];
-    CBWebVC *vc = [CBWebVC new];
-    vc.title = @"服务和隐私条款";
-    [vc webViewloadRequestWithURLString:H5_protocol];
-    [self.navigationController pushViewController:vc animated:YES];
+//    CBWebVC *vc = [CBWebVC new];
+//    vc.title = @"服务和隐私条款";
+//    [vc webViewloadRequestWithURLString:H5_protocol];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)actionLogin:(id)sender {
     [self.view endEditing:YES];
-    NSString *url = urlUserLogin;
-    NSDictionary *param = @{@"mobile_num": self.phoneTextField.text,
-                            @"password": self.pwdTextField.text};
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    @weakify(self);
-    [PPNetworkHelper POST:url parameters:param success:^(id responseObject) {
-        @strongify(self);
-        NSNumber *code = [responseObject valueForKey:@"code"];
-        if ([code isEqualToNumber:@200]) {
-            NSDictionary *rdata = responseObject[@"data"];
-            NSString *token = rdata[@"token"];
-            [self httpGetUserInfoWithToken:token];
-        } else {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            NSString *descrp = responseObject[@"descrp"];
-            [MBProgressHUD showAutoMessage:descrp];
-        }
-    } failure:^(NSError *error) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [MBProgressHUD showAutoMessage:@"登录失败"];
+    [self.logic logicLoginWithUserName:self.phoneTextField.text andPassword:self.pwdTextField.text completionBlock:^(id aResponseObject, NSError *error) {
+        
     }];
+    
+//    NSString *url = urlUserLogin;
+//    NSDictionary *param = @{@"mobile_num": self.phoneTextField.text,
+//                            @"password": self.pwdTextField.text};
+//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    @weakify(self);
+//    [PPNetworkHelper POST:url parameters:param success:^(id responseObject) {
+//        @strongify(self);
+//        NSNumber *code = [responseObject valueForKey:@"code"];
+//        if ([code isEqualToNumber:@200]) {
+//            NSDictionary *rdata = responseObject[@"data"];
+//            NSString *token = rdata[@"token"];
+//            [self httpGetUserInfoWithToken:token];
+//        } else {
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//            NSString *descrp = responseObject[@"descrp"];
+//            [MBProgressHUD showAutoMessage:descrp];
+//        }
+//    } failure:^(NSError *error) {
+//        [MBProgressHUD hideHUDForView:self.view animated:YES];
+//        [MBProgressHUD showAutoMessage:@"登录失败"];
+//    }];
 }
 
 - (void)httpGetUserInfoWithToken:(NSString *)token {
-    NSString *url = urlGetUserInfo;
-    NSDictionary *param = @{@"token": token};
-    [PPNetworkHelper POST:url parameters:param success:^(id responseObject) {
-        NSNumber *code = [responseObject valueForKey:@"code"];
-        if ([code isEqualToNumber:@200]) {
-            NSDictionary *info = [responseObject valueForKey:@"data"];
-            CBLiveUser *userInfo = [[CBLiveUser alloc] initWithDic:info];
-            [CBLiveUserConfig saveProfile:userInfo];
-            
-            [self loginENClient];
-            [self loginJPUSH];
-            [self loginUI];
-        } else {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            NSString *descrp = responseObject[@"descrp"];
-            [MBProgressHUD showAutoMessage:descrp];
-        }
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-    } failure:^(NSError *error) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [MBProgressHUD showAutoMessage:@"登录失败"];
-    }];
+//    NSString *url = urlGetUserInfo;
+//    NSDictionary *param = @{@"token": token};
+//    [PPNetworkHelper POST:url parameters:param success:^(id responseObject) {
+//        NSNumber *code = [responseObject valueForKey:@"code"];
+//        if ([code isEqualToNumber:@200]) {
+//            NSDictionary *info = [responseObject valueForKey:@"data"];
+//            CBLiveUser *userInfo = [[CBLiveUser alloc] initWithDic:info];
+//            [CBLiveUserConfig saveProfile:userInfo];
+//            
+//            [self loginENClient];
+//            [self loginJPUSH];
+//            [self loginUI];
+//        } else {
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//            NSString *descrp = responseObject[@"descrp"];
+//            [MBProgressHUD showAutoMessage:descrp];
+//        }
+//        [MBProgressHUD hideHUDForView:self.view animated:YES];
+//    } failure:^(NSError *error) {
+//        [MBProgressHUD hideHUDForView:self.view animated:YES];
+//        [MBProgressHUD showAutoMessage:@"登录失败"];
+//    }];
 }
 
 - (void)actionChangeBtnState {
@@ -182,23 +197,23 @@
 }
 
 - (void)requestLogin:(SSDKUser *)user loginType:(SSDKPlatformType)loginType {
-    NSString *url = urlSendOauthUserInfo;
-    NSDictionary *param = [self paramWithUser:user loginType:loginType];
-    [PPNetworkHelper POST:url parameters:param success:^(id responseObject) {
-        NSNumber *code = [responseObject valueForKey:@"code"];
-        if ([code isEqualToNumber:@200]) {
-            NSDictionary *rdata = responseObject[@"data"];
-            NSString *token = rdata[@"token"];
-            [self httpGetUserInfoWithToken:token];
-        } else {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            NSString *descrp = responseObject[@"descrp"];
-            [MBProgressHUD showAutoMessage:descrp];
-        }
-    } failure:^(NSError *error) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [MBProgressHUD showAutoMessage:@"登录失败"];
-    }];
+//    NSString *url = urlSendOauthUserInfo;
+//    NSDictionary *param = [self paramWithUser:user loginType:loginType];
+//    [PPNetworkHelper POST:url parameters:param success:^(id responseObject) {
+//        NSNumber *code = [responseObject valueForKey:@"code"];
+//        if ([code isEqualToNumber:@200]) {
+//            NSDictionary *rdata = responseObject[@"data"];
+//            NSString *token = rdata[@"token"];
+//            [self httpGetUserInfoWithToken:token];
+//        } else {
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//            NSString *descrp = responseObject[@"descrp"];
+//            [MBProgressHUD showAutoMessage:descrp];
+//        }
+//    } failure:^(NSError *error) {
+//        [MBProgressHUD hideHUDForView:self.view animated:YES];
+//        [MBProgressHUD showAutoMessage:@"登录失败"];
+//    }];
 }
 
 - (NSMutableDictionary *)paramWithUser:(SSDKUser *)user loginType:(SSDKPlatformType)loginType {
@@ -243,26 +258,26 @@
 
 // 环信登录
 - (void)loginENClient {
-    [Bugly setUserIdentifier:[CBLiveUserConfig getHXuid]];
-    [[EMClient sharedClient] loginWithUsername:[CBLiveUserConfig getHXuid] password:[CBLiveUserConfig getHXpwd] completion:^(NSString *aUsername, EMError *aError) {
-        if (aError) {
-            NSLog(@"环信登录错误--%@",aError.errorDescription);
-        } else {            
-            NSLog(@"环信登录成功--%@",aUsername);
-            [[EMClient sharedClient].options setIsAutoLogin:YES];
-            BOOL isAutoLogin = [EMClient sharedClient].isAutoLogin;
-            if (isAutoLogin) {
-                NSLog(@"自动登录");
-            } else {
-                NSLog(@"非自动登录");
-            }
-        }
-    }];
+//    [Bugly setUserIdentifier:[CBLiveUserConfig getHXuid]];
+//    [[EMClient sharedClient] loginWithUsername:[CBLiveUserConfig getHXuid] password:[CBLiveUserConfig getHXpwd] completion:^(NSString *aUsername, EMError *aError) {
+//        if (aError) {
+//            NSLog(@"环信登录错误--%@",aError.errorDescription);
+//        } else {
+//            NSLog(@"环信登录成功--%@",aUsername);
+//            [[EMClient sharedClient].options setIsAutoLogin:YES];
+//            BOOL isAutoLogin = [EMClient sharedClient].isAutoLogin;
+//            if (isAutoLogin) {
+//                NSLog(@"自动登录");
+//            } else {
+//                NSLog(@"非自动登录");
+//            }
+//        }
+//    }];
 }
 
 // 登录极光
 - (void)loginJPUSH {
-    NSString *aliasStr = [NSString stringWithFormat:@"%@PUSH", [CBLiveUserConfig getOwnID]];
+//    NSString *aliasStr = [NSString stringWithFormat:@"%@PUSH", [CBLiveUserConfig getOwnID]];
 //    [JPUSHService setAlias:aliasStr callbackSelector:nil object:nil];
 }
 

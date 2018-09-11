@@ -84,28 +84,28 @@
     }
     
     {
-        self.authCodeTime = 60;
-        self.codeButton.userInteractionEnabled = NO;
-        NSString *url = urlGetCode;
-        NSDictionary *getcode = @{ @"mobile_num": self.phoneTextField.text,
-                                   @"status": @"forgetPassword0" };
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [PPNetworkHelper POST:url parameters:getcode success:^(id responseObject) {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            NSNumber *code = [responseObject valueForKey:@"code"];
-            NSString *descrp = [responseObject valueForKey:@"descrp"];
-            [MBProgressHUD showAutoMessage:descrp];
-            if ([code isEqualToNumber:@200]) {
-                if (self.messsageTimer == nil) {
-                    self.messsageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(actionTimeCountDown) userInfo:nil repeats:YES];
-                }
-            }
-            self.codeButton.userInteractionEnabled = YES;
-        } failure:^(NSError *error) {
-            [MBProgressHUD showAutoMessage:@"验证码获取失败"];
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            self.codeButton.userInteractionEnabled = YES;
-        }];
+//        self.authCodeTime = 60;
+//        self.codeButton.userInteractionEnabled = NO;
+//        NSString *url = urlGetCode;
+//        NSDictionary *getcode = @{ @"mobile_num": self.phoneTextField.text,
+//                                   @"status": @"forgetPassword0" };
+//        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//        [PPNetworkHelper POST:url parameters:getcode success:^(id responseObject) {
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//            NSNumber *code = [responseObject valueForKey:@"code"];
+//            NSString *descrp = [responseObject valueForKey:@"descrp"];
+//            [MBProgressHUD showAutoMessage:descrp];
+//            if ([code isEqualToNumber:@200]) {
+//                if (self.messsageTimer == nil) {
+//                    self.messsageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(actionTimeCountDown) userInfo:nil repeats:YES];
+//                }
+//            }
+//            self.codeButton.userInteractionEnabled = YES;
+//        } failure:^(NSError *error) {
+//            [MBProgressHUD showAutoMessage:@"验证码获取失败"];
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//            self.codeButton.userInteractionEnabled = YES;
+//        }];
     }
 }
 
@@ -133,27 +133,27 @@
     }
     
     {
-        NSString *url = urlUserForget;
-        NSDictionary *regDict = @{@"mobile_num":self.phoneTextField.text,
-                                  @"varcode":self.codeTextField.text,
-                                  @"password":self.pwdTextField.text,
-                                  @"repassword":self.checkPwdTextField.text};
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [PPNetworkHelper POST:url parameters:regDict success:^(id responseObject) {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            NSNumber *code = [responseObject valueForKey:@"code"];
-            NSString *descrp = [responseObject valueForKey:@"descrp"];
-//            NSString *token = [responseObject valueForKey:@"token"];
-            [MBProgressHUD showAutoMessage:descrp];
-            if ([code isEqualToNumber:@200]) {
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [self.navigationController popViewControllerAnimated:YES];
-                });
-            }
-        } failure:^(NSError *error) {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [MBProgressHUD showAutoMessage:@"注册失败"];
-        }];
+//        NSString *url = urlUserForget;
+//        NSDictionary *regDict = @{@"mobile_num":self.phoneTextField.text,
+//                                  @"varcode":self.codeTextField.text,
+//                                  @"password":self.pwdTextField.text,
+//                                  @"repassword":self.checkPwdTextField.text};
+//        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//        [PPNetworkHelper POST:url parameters:regDict success:^(id responseObject) {
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//            NSNumber *code = [responseObject valueForKey:@"code"];
+//            NSString *descrp = [responseObject valueForKey:@"descrp"];
+////            NSString *token = [responseObject valueForKey:@"token"];
+//            [MBProgressHUD showAutoMessage:descrp];
+//            if ([code isEqualToNumber:@200]) {
+//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                    [self.navigationController popViewControllerAnimated:YES];
+//                });
+//            }
+//        } failure:^(NSError *error) {
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//            [MBProgressHUD showAutoMessage:@"注册失败"];
+//        }];
     }
 }
 
