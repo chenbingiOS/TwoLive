@@ -62,6 +62,8 @@
 		54531CEF214774CA005D87BA /* CBForgetAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CEE214774CA005D87BA /* CBForgetAPI.m */; };
 		54531CF521479825005D87BA /* CBUserProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CF421479825005D87BA /* CBUserProfileManager.m */; };
 		54531CF82147A373005D87BA /* CBThirdLoginAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CF72147A373005D87BA /* CBThirdLoginAPI.m */; };
+		54531CFB2147BFED005D87BA /* CBHomeVCUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CFA2147BFED005D87BA /* CBHomeVCUI.m */; };
+		54531CFE2147C81A005D87BA /* CBRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CFD2147C81A005D87BA /* CBRootVC.m */; };
 		8E5F4A2A2DC4257315B3863A /* libPods-FwApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +169,10 @@
 		54531CF421479825005D87BA /* CBUserProfileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBUserProfileManager.m; sourceTree = "<group>"; };
 		54531CF62147A373005D87BA /* CBThirdLoginAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBThirdLoginAPI.h; sourceTree = "<group>"; };
 		54531CF72147A373005D87BA /* CBThirdLoginAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBThirdLoginAPI.m; sourceTree = "<group>"; };
+		54531CF92147BFED005D87BA /* CBHomeVCUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBHomeVCUI.h; sourceTree = "<group>"; };
+		54531CFA2147BFED005D87BA /* CBHomeVCUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBHomeVCUI.m; sourceTree = "<group>"; };
+		54531CFC2147C81A005D87BA /* CBRootVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBRootVC.h; sourceTree = "<group>"; };
+		54531CFD2147C81A005D87BA /* CBRootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBRootVC.m; sourceTree = "<group>"; };
 		BA8E96F2C692180177CB7659 /* Pods-FwApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.release.xcconfig"; sourceTree = "<group>"; };
 		DE64301DFB46888C031105E9 /* Pods-FwApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FwApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +197,8 @@
 				54531CAB21467063005D87BA /* Login */,
 				540F1C3C2142699700AA408C /* CBHomeVC.h */,
 				540F1C3D2142699700AA408C /* CBHomeVC.m */,
+				54531CF92147BFED005D87BA /* CBHomeVCUI.h */,
+				54531CFA2147BFED005D87BA /* CBHomeVCUI.m */,
 				540F1C3F214269A300AA408C /* CBVideoVC.h */,
 				540F1C40214269A300AA408C /* CBVideoVC.m */,
 				540F1C42214269C000AA408C /* CBAnchorVC.h */,
@@ -210,6 +218,8 @@
 				540F1C39214268C500AA408C /* CBNVC.m */,
 				540F1C38214268C500AA408C /* CBTBC.h */,
 				540F1C37214268C500AA408C /* CBTBC.m */,
+				54531CFC2147C81A005D87BA /* CBRootVC.h */,
+				54531CFD2147C81A005D87BA /* CBRootVC.m */,
 			);
 			path = RootVC;
 			sourceTree = "<group>";
@@ -748,6 +758,7 @@
 				540F1C5921426E1100AA408C /* UIColor+Color.m in Sources */,
 				54531C98214649C2005D87BA /* CBArchiverTool.m in Sources */,
 				54531CDA21474CBC005D87BA /* CBLogic.m in Sources */,
+				54531CFB2147BFED005D87BA /* CBHomeVCUI.m in Sources */,
 				540F1C3B214268C500AA408C /* CBNVC.m in Sources */,
 				540F1C5D2142765E00AA408C /* CBLaunch.m in Sources */,
 				54531CEF214774CA005D87BA /* CBForgetAPI.m in Sources */,
@@ -758,6 +769,7 @@
 				5426E19321420DCE008AF44A /* ViewController.m in Sources */,
 				540F1C47214269CB00AA408C /* CBAttentionVC.m in Sources */,
 				54531CBC21467063005D87BA /* CBRegisterVC.m in Sources */,
+				54531CFE2147C81A005D87BA /* CBRootVC.m in Sources */,
 				54531C9D21464DA2005D87BA /* CBRequestAPI.m in Sources */,
 				540F1C41214269A300AA408C /* CBVideoVC.m in Sources */,
 				54531CCD214672D3005D87BA /* MBProgressHUD+HUD.m in Sources */,

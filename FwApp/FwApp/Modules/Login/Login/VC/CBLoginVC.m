@@ -170,7 +170,10 @@
         if (error) {
             [MBProgressHUD showAutoMessage:error.domain];
         } else {
-            
+            self.view.alpha = 1;
+            [UIView animateWithDuration:0.45f animations:^{
+                self.view.alpha = 0;
+            }];
         }
     }];
 }
@@ -181,34 +184,60 @@
     NSString *logAuthTypeType = nil;
     
     switch (loginType) {
-        case SSDKPlatformTypeWechat: logAuthTypeType = @"Wechat"; break;
-        case SSDKPlatformTypeQQ: logAuthTypeType = @"QQ"; break;
-        case SSDKPlatformTypeSinaWeibo: logAuthTypeType = @"SinaWeibo"; break;
+        case SSDKPlatformTypeWechat:
+            logAuthTypeType = @"Wechat";
+            break;
+        case SSDKPlatformTypeQQ:
+            logAuthTypeType = @"QQ";
+            break;
+        case SSDKPlatformTypeSinaWeibo:
+            logAuthTypeType = @"SinaWeibo";
+            break;
         default: break;
     }
     
     switch (user.gender) {
-        case SSDKGenderMale: [paramDict setObject:@"1" forKey:@"sex"]; break;
-        case SSDKGenderFemale: [paramDict setObject:@"2" forKey:@"sex"]; break;
-        case SSDKGenderUnknown: [paramDict setObject:@"0" forKey:@"sex"]; break;
+        case SSDKGenderMale:
+            paramDict[@"sex"] = @"1";
+            break;
+        case SSDKGenderFemale:
+            paramDict[@"sex"] = @"2";
+            break;
+        case SSDKGenderUnknown:
+            paramDict[@"sex"] = @"0";
+            break;
         default: break;
     }
     
     //生日
-    //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    //    NSString *dateStr = [dateFormatter stringFromDate:user.birthday];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *dateStr = [dateFormatter stringFromDate:user.birthday];
+
+    paramDict[@"openid"] = user.uid ? : @"";    // openid
+    paramDict[@"from"] = logAuthTypeType ? : @"";    // authorType
+    paramDict[@"openid"] = user.uid ? : @"";    // authUnionid
+    paramDict[@"openid"] = user.uid ? : @"";    // userAge
+    paramDict[@"openid"] = user.uid ? : @"";    // userAvatar
+    paramDict[@"openid"] = user.uid ? : @"";    // userBirthday
+    paramDict[@"openid"] = user.uid ? : @"";    // userCity
+    paramDict[@"openid"] = user.uid ? : @"";    // userNickname
+    paramDict[@"openid"] = user.uid ? : @"";    // userProvince
+    paramDict[@"openid"] = user.uid ? : @"";    // verifiedReason
+    paramDict[@"openid"] = user.uid ? : @"";    // access_token
+    paramDict[@"openid"] = user.uid ? : @"";    // expires_date
+    
     
     [paramDict setObject:user.uid ? : @"" forKey:@"openid"];                                       //openid
     [paramDict setObject:logAuthTypeType ? : @"" forKey:@"from"];                                  //authorType
     [paramDict setObject:[user.rawData objectForKey:@"unionid"] ? : @"" forKey:@"unionid"];        //authUnionid
-    //    [paramDict setObject:[user.rawData objectForKey:@"age"] ? : @"" forKey:@"userAge"];                //userAge
+    [paramDict setObject:[user.rawData objectForKey:@"age"] ? : @"" forKey:@"userAge"];                //userAge
     [paramDict setObject:user.icon ? : @"" forKey:@"head_img"];                                      //userAvatar
-    //    [paramDict setObject:dateStr ? : @"" forKey:@"userBirthday"];                                      //userBirthday
-    //    [paramDict setObject:[user.rawData objectForKey:@"city"]?:@"" forKey:@"userCity"];              //userCity
+    [paramDict setObject:dateStr ? : @"" forKey:@"userBirthday"];                                      //userBirthday
+    [paramDict setObject:[user.rawData objectForKey:@"city"]?:@"" forKey:@"userCity"];              //userCity
     [paramDict setObject:user.nickname ? : @"" forKey:@"name"];                                //userNickname
-    //    [paramDict setObject:[user.rawData objectForKey:@"province"]?:@"" forKey:@"userProvince"];      //userProvince
-    //    [paramDict setObject:user.verifyReason?:@"" forKey:@"verifiedReason"];                          //verifiedReason
+    [paramDict setObject:[user.rawData objectForKey:@"province"]?:@"" forKey:@"userProvince"];      //userProvince
+    [paramDict setObject:user.verifyReason?:@"" forKey:@"verifiedReason"];                          //verifiedReason
     [paramDict setObject:user.credential.token ? : @"" forKey:@"access_token"];                          //access_token
     [paramDict setObject:user.credential.expired ? : @"" forKey:@"expires_date"];                          //expires_date
     
