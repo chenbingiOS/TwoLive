@@ -21,4 +21,15 @@
                           verCode:(NSString *)verCode
                   completionBlock:(CBNetworkCompletionBlock)completionBlock;
 
+// 验证码
+- (void)logicVerCodeWithUserName:(NSString *)userName
+                       andStatus:(NSString *)status
+                 completionBlock:(CBNetworkCompletionBlock)completionBlock;
+
+// 忘记密码
+- (void)logicForgetWithUserName:(NSString *)userName
+                        verCode:(NSString *)verCode
+                       password:(NSString *)password
+                     repassword:(NSString *)repassword
+                completionBlock:(CBNetworkCompletionBlock)completionBlock;
 @end

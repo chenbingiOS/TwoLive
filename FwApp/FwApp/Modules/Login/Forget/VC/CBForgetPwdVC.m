@@ -7,6 +7,7 @@
 //
 
 #import "CBForgetPwdVC.h"
+#import "CBLoginLogic.h"
 
 @interface CBForgetPwdVC ()
 
@@ -20,18 +21,27 @@
 @property (nonatomic, assign) NSInteger authCodeTime;
 @property (nonatomic, strong) NSTimer *messsageTimer;
 
+@property (nonatomic, strong) CBLoginLogic *logic;
+
 @end
 
 @implementation CBForgetPwdVC
 
+- (CBLoginLogic *)logic {
+    if (!_logic) {
+        _logic = [CBLoginLogic new];
+    }
+    return _logic;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)viewDidLoad {
@@ -74,6 +84,8 @@
 
 
 - (IBAction)actionGetCode:(id)sender {
+    [self.view endEditing:YES];
+    
     if (self.phoneTextField.text.length!=11){
         [MBProgressHUD showAutoMessage:@"手机号输入错误"];
         return;
@@ -84,28 +96,22 @@
     }
     
     {
-//        self.authCodeTime = 60;
-//        self.codeButton.userInteractionEnabled = NO;
-//        NSString *url = urlGetCode;
-//        NSDictionary *getcode = @{ @"mobile_num": self.phoneTextField.text,
-//                                   @"status": @"forgetPassword0" };
-//        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//        [PPNetworkHelper POST:url parameters:getcode success:^(id responseObject) {
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            NSNumber *code = [responseObject valueForKey:@"code"];
-//            NSString *descrp = [responseObject valueForKey:@"descrp"];
-//            [MBProgressHUD showAutoMessage:descrp];
-//            if ([code isEqualToNumber:@200]) {
-//                if (self.messsageTimer == nil) {
-//                    self.messsageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(actionTimeCountDown) userInfo:nil repeats:YES];
-//                }
-//            }
-//            self.codeButton.userInteractionEnabled = YES;
-//        } failure:^(NSError *error) {
-//            [MBProgressHUD showAutoMessage:@"验证码获取失败"];
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            self.codeButton.userInteractionEnabled = YES;
-//        }];
+        self.authCodeTime = 60;
+        self.codeButton.userInteractionEnabled = NO;
+        [self showLoading];
+        @weakify(self);
+        [self.logic logicVerCodeWithUserName:self.phoneTextField.text andStatus:@"forgetPassword0" completionBlock:^(id aResponseObject, NSError *error) {
+            @strongify(self);
+            self.codeButton.userInteractionEnabled = YES;
+            [self hideLoading];
+            if (error) {
+                [MBProgressHUD showAutoMessage:error.domain];
+            } else {
+                if (self.messsageTimer == nil) {
+                    self.messsageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(actionTimeCountDown) userInfo:nil repeats:YES];
+                }
+            }
+        }];
     }
 }
 
@@ -133,27 +139,20 @@
     }
     
     {
-//        NSString *url = urlUserForget;
-//        NSDictionary *regDict = @{@"mobile_num":self.phoneTextField.text,
-//                                  @"varcode":self.codeTextField.text,
-//                                  @"password":self.pwdTextField.text,
-//                                  @"repassword":self.checkPwdTextField.text};
-//        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//        [PPNetworkHelper POST:url parameters:regDict success:^(id responseObject) {
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            NSNumber *code = [responseObject valueForKey:@"code"];
-//            NSString *descrp = [responseObject valueForKey:@"descrp"];
-////            NSString *token = [responseObject valueForKey:@"token"];
-//            [MBProgressHUD showAutoMessage:descrp];
-//            if ([code isEqualToNumber:@200]) {
-//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                    [self.navigationController popViewControllerAnimated:YES];
-//                });
-//            }
-//        } failure:^(NSError *error) {
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            [MBProgressHUD showAutoMessage:@"注册失败"];
-//        }];
+        [self showLoading];
+        @weakify(self);
+        [self.logic logicForgetWithUserName:self.phoneTextField.text verCode:self.codeTextField.text password:self.pwdTextField.text repassword:self.checkPwdTextField.text completionBlock:^(id aResponseObject, NSError *error) {
+            @strongify(self);
+            [self hideLoading];
+            if (error) {
+                [MBProgressHUD showAutoMessage:error.domain];
+            } else {
+                [MBProgressHUD showAutoMessage:@"密码重置成功"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                });
+            }
+        }];
     }
 }
 
@@ -163,7 +162,10 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    self.messsageTimer = nil;
+    if (self.messsageTimer) {
+        [self.messsageTimer invalidate];
+        self.messsageTimer = nil;
+    }    
 }
 
 @end

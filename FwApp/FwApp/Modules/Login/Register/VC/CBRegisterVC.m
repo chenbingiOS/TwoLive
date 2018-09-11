@@ -30,6 +30,13 @@
 
 @implementation CBRegisterVC
 
+- (CBLoginLogic *)logic {
+    if (!_logic) {
+        _logic = [CBLoginLogic new];
+    }
+    return _logic;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
@@ -64,28 +71,22 @@
     }
     
     {
-//        self.authCodeTime = 60;
-//        self.authCodeBtn.userInteractionEnabled = NO;
-//        NSString *url = urlGetCode;
-//        NSDictionary *getcode = @{ @"mobile_num": self.phoneTextField.text,
-//                                   @"status": @"register0" };
-//        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//        [PPNetworkHelper POST:url parameters:getcode success:^(id responseObject) {
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            NSNumber *code = [responseObject valueForKey:@"code"];
-//            NSString *descrp = [responseObject valueForKey:@"descrp"];
-//            [MBProgressHUD showAutoMessage:descrp];
-//            if ([code isEqualToNumber:@200]) {
-//                if (self.messsageTimer == nil) {
-//                    self.messsageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(actionTimeCountDown) userInfo:nil repeats:YES];
-//                }
-//            }
-//            self.authCodeBtn.userInteractionEnabled = YES;
-//        } failure:^(NSError *error) {
-//            [MBProgressHUD showAutoMessage:@"验证码获取失败"];
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            self.authCodeBtn.userInteractionEnabled = YES;
-//        }];
+        self.authCodeTime = 60;
+        self.authCodeBtn.userInteractionEnabled = NO;
+        [self showLoading];
+        @weakify(self);
+        [self.logic logicVerCodeWithUserName:self.phoneTextField.text andStatus:@"register0" completionBlock:^(id aResponseObject, NSError *error) {
+            @strongify(self);
+            [self hideLoading];
+            self.authCodeBtn.userInteractionEnabled = YES;
+            if (error) {
+                [MBProgressHUD showAutoMessage:error.domain];
+            } else {
+                if (self.messsageTimer == nil) {
+                    self.messsageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(actionTimeCountDown) userInfo:nil repeats:YES];
+                }
+            }
+        }];
     }
 }
 
@@ -113,28 +114,15 @@
     }
     
     {
-//        NSString *url = urlUserReg;
-//        NSDictionary *regDict = @{@"mobile_num":self.phoneTextField.text,
-//                                  @"password":self.pwdTextField.text,
-//                                  @"varcode":self.codeTextField.text };
-//        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//        @weakify(self);
-//        [PPNetworkHelper POST:url parameters:regDict success:^(id responseObject) {
-//            @strongify(self);
-//            NSNumber *code = [responseObject valueForKey:@"code"];
-//            if ([code isEqualToNumber:@200]) {
-//                NSDictionary *rdata = responseObject[@"data"];
-//                NSString *token = rdata[@"token"];
-//                [self httpGetUserInfoWithToken:token];
-//            } else {
-//                [MBProgressHUD hideHUDForView:self.view animated:YES];
-//                NSString *descrp = responseObject[@"descrp"];
-//                [MBProgressHUD showAutoMessage:descrp];
-//            }
-//        } failure:^(NSError *error) {
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            [MBProgressHUD showAutoMessage:@"注册失败"];
-//        }];
+        [self showLoading];
+        [self.logic logicRegisterWithUserName:self.phoneTextField.text andPassword:self.pwdTextField.text verCode:self.codeTextField.text completionBlock:^(id aResponseObject, NSError *error) {
+            [self hideLoading];
+            if (error) {
+                
+            } else {
+                [MBProgressHUD showAutoMessage:error.domain];
+            }
+        }];
     }
 }
 
@@ -164,7 +152,7 @@
 }
 
 // 环信登录
--(void)loginENClient{
+- (void)loginENClient{
 //    [[EMClient sharedClient] loginWithUsername:[CBLiveUserConfig getHXuid] password:[CBLiveUserConfig getHXpwd] completion:^(NSString *aUsername, EMError *aError) {
 //        if (aError) {
 //            NSLog(@"环信登录错误--%@",aError.errorDescription);
@@ -252,6 +240,10 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    self.messsageTimer = nil;
+    if (self.messsageTimer) {
+        [self.messsageTimer invalidate];
+        self.messsageTimer = nil;
+    }
 }
+
 @end

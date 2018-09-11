@@ -12,6 +12,40 @@
 
 @implementation CBRequestAPI
 
+#pragma mark ————— 自定义数据 —————
+
+- (NSString *)message {
+    if (self.error) {
+        return self.error.localizedDescription;
+    }
+    NSString *message = [NSString stringWithFormat:@"%@", self.responseJSONObject[@"descrp"]];
+    return message;
+}
+
+- (NSString *)code {
+    NSString *code = [NSString stringWithFormat:@"%@", self.responseJSONObject[@"code"]];
+    return code;
+}
+
+- (BOOL)isSuccess {
+    NSString *code = [self code];
+    BOOL isSuccess = NO;
+    if ([code isEqualToString:@"200"]) {
+        isSuccess = YES;
+    }
+    else if ([code isEqualToString:@"504"]) {
+        //账号被顶掉
+        //        [[kAppDelegate getCurrentUIVC] AlertWithTitle:nil message:self.message andOthers:@[@"确定"] animated:YES action:nil];
+        //        KPostNotification(KNotificationOnKick, nil);
+    }
+    else if([code isEqualToString:@"40000"]){
+        //token过期
+        //        [[kAppDelegate getCurrentUIVC] AlertWithTitle:nil message:self.message andOthers:@[@"确定"] animated:YES action:nil];
+        //        KPostNotification(KNotificationOnKick, nil);
+    }
+    return isSuccess;
+}
+
 #pragma mark ————— 定义返回数据格式，若是加密要用HTTP接受 —————
 - (YTKResponseSerializerType)responseSerializerType {
 //    if (self.isOpenAES) {
@@ -35,15 +69,15 @@
     //失败处理器
 }
 
-//#pragma mark ————— 请求成功过滤器 —————
-//- (void)requestCompleteFilter{
+#pragma mark ————— 请求成功过滤器 —————
+- (void)requestCompleteFilter{
 //    //解密
 //    if (_isOpenAES) {
 //        self.result = aesDecryptWithData(self.responseData);
 //    } else {
 //        self.result = self.responseJSONObject;
 //    }
-//}
+}
 
 /*
 - (instancetype)init{
@@ -53,41 +87,6 @@
     }
     return self;
 }
-
-#pragma mark ————— 自定义数据 —————
-
-- (NSString *)message {
-    if (self.error) {
-        return self.error.localizedDescription;
-    }
-    NSString *message = [NSString stringWithFormat:@"%@", self.result[@"codemsg"]];
-    return message;
-}
-
-- (NSString *)code {
-    NSString *code = [NSString stringWithFormat:@"%@",self.result[@"code"]];
-    return code;
-}
-
-- (BOOL)isSuccess {
-    NSString *code = [self code];
-    BOOL isSuccess = NO;
-    if ([code isEqualToString:@"0"]) {
-        isSuccess = YES;
-    }
-    else if ([code isEqualToString:@"504"]) {
-        //账号被顶掉
-//        [[kAppDelegate getCurrentUIVC] AlertWithTitle:nil message:self.message andOthers:@[@"确定"] animated:YES action:nil];
-//        KPostNotification(KNotificationOnKick, nil);
-    }
-    else if([code isEqualToString:@"1039"]){
-        //token过期
-//        [[kAppDelegate getCurrentUIVC] AlertWithTitle:nil message:self.message andOthers:@[@"确定"] animated:YES action:nil];
-//        KPostNotification(KNotificationOnKick, nil);
-    }
-    return  isSuccess;
-}
-
 
 
 

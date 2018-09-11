@@ -58,6 +58,8 @@
 		54531CDA21474CBC005D87BA /* CBLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CD921474CBC005D87BA /* CBLogic.m */; };
 		54531CE321474EE7005D87BA /* CBRegisterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CE221474EE7005D87BA /* CBRegisterAPI.m */; };
 		54531CE721475F33005D87BA /* UIViewController+loading.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CE621475F32005D87BA /* UIViewController+loading.m */; };
+		54531CEA21477102005D87BA /* CBVerCodeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CE921477102005D87BA /* CBVerCodeAPI.m */; };
+		54531CEF214774CA005D87BA /* CBForgetAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CEE214774CA005D87BA /* CBForgetAPI.m */; };
 		8E5F4A2A2DC4257315B3863A /* libPods-FwApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */; };
 /* End PBXBuildFile section */
 
@@ -155,6 +157,10 @@
 		54531CE221474EE7005D87BA /* CBRegisterAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBRegisterAPI.m; sourceTree = "<group>"; };
 		54531CE521475F32005D87BA /* UIViewController+loading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+loading.h"; sourceTree = "<group>"; };
 		54531CE621475F32005D87BA /* UIViewController+loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+loading.m"; sourceTree = "<group>"; };
+		54531CE821477102005D87BA /* CBVerCodeAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBVerCodeAPI.h; sourceTree = "<group>"; };
+		54531CE921477102005D87BA /* CBVerCodeAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBVerCodeAPI.m; sourceTree = "<group>"; };
+		54531CED214774CA005D87BA /* CBForgetAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBForgetAPI.h; sourceTree = "<group>"; };
+		54531CEE214774CA005D87BA /* CBForgetAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBForgetAPI.m; sourceTree = "<group>"; };
 		BA8E96F2C692180177CB7659 /* Pods-FwApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.release.xcconfig"; sourceTree = "<group>"; };
 		DE64301DFB46888C031105E9 /* Pods-FwApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FwApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,7 +197,7 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		540F1C352142679100AA408C /* VC */ = {
+		540F1C352142679100AA408C /* RootVC */ = {
 			isa = PBXGroup;
 			children = (
 				540F1C36214268C400AA408C /* CBNVC.h */,
@@ -199,7 +205,7 @@
 				540F1C38214268C500AA408C /* CBTBC.h */,
 				540F1C37214268C500AA408C /* CBTBC.m */,
 			);
-			path = VC;
+			path = RootVC;
 			sourceTree = "<group>";
 		};
 		540F1C5521426DF800AA408C /* Category */ = {
@@ -322,7 +328,7 @@
 				540F1C5E2142772E00AA408C /* Define */,
 				540F1C5A2142761C00AA408C /* Launch */,
 				540F1C6621427DDB00AA408C /* Guide */,
-				540F1C352142679100AA408C /* VC */,
+				540F1C352142679100AA408C /* RootVC */,
 				540F1C5521426DF800AA408C /* Category */,
 				54531C95214649B7005D87BA /* Tools */,
 			);
@@ -444,9 +450,8 @@
 		54531CB321467063005D87BA /* Forget */ = {
 			isa = PBXGroup;
 			children = (
-				54531CB621467063005D87BA /* CBForgetPwdVC.h */,
-				54531CB521467063005D87BA /* CBForgetPwdVC.m */,
-				54531CB421467063005D87BA /* CBForgetPwdVC.xib */,
+				54531CEB2147749D005D87BA /* VC */,
+				54531CEC214774B8005D87BA /* API */,
 			);
 			path = Forget;
 			sourceTree = "<group>";
@@ -540,6 +545,8 @@
 			children = (
 				54531CE121474EE7005D87BA /* CBRegisterAPI.h */,
 				54531CE221474EE7005D87BA /* CBRegisterAPI.m */,
+				54531CE821477102005D87BA /* CBVerCodeAPI.h */,
+				54531CE921477102005D87BA /* CBVerCodeAPI.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -551,6 +558,25 @@
 				54531CE621475F32005D87BA /* UIViewController+loading.m */,
 			);
 			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		54531CEB2147749D005D87BA /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				54531CB621467063005D87BA /* CBForgetPwdVC.h */,
+				54531CB521467063005D87BA /* CBForgetPwdVC.m */,
+				54531CB421467063005D87BA /* CBForgetPwdVC.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		54531CEC214774B8005D87BA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				54531CED214774CA005D87BA /* CBForgetAPI.h */,
+				54531CEE214774CA005D87BA /* CBForgetAPI.m */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		D3DB74AA1EC40C8D27104F3A /* Pods */ = {
@@ -714,6 +740,8 @@
 				54531CDA21474CBC005D87BA /* CBLogic.m in Sources */,
 				540F1C3B214268C500AA408C /* CBNVC.m in Sources */,
 				540F1C5D2142765E00AA408C /* CBLaunch.m in Sources */,
+				54531CEF214774CA005D87BA /* CBForgetAPI.m in Sources */,
+				54531CEA21477102005D87BA /* CBVerCodeAPI.m in Sources */,
 				54531C912146424A005D87BA /* NSObject+Class.m in Sources */,
 				540F1C3A214268C500AA408C /* CBTBC.m in Sources */,
 				54531CBB21467063005D87BA /* CBWebVC.m in Sources */,
