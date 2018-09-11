@@ -25,11 +25,11 @@
     if (view == nil) view = (UIView*)[UIApplication sharedApplication].delegate.window;
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.labelText = message;
+    hud.label.text = message;
     // 隐藏时候从父控件中移除
     hud.removeFromSuperViewOnHide = YES;
     // YES代表需要蒙版效果
-    hud.dimBackground = YES;
+    hud.backgroundColor = [UIColor colorWithWhite:0.f alpha:.2f];
     return hud;
 }
 
@@ -46,7 +46,7 @@
     if (view == nil) view = (UIView*)[UIApplication sharedApplication].delegate.window;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.mode = model;
-    hud.labelText = text;
+    hud.label.text = text;
     return hud;
 }
 
@@ -78,17 +78,17 @@
     if (view == nil) view = (UIView*)[UIApplication sharedApplication].delegate.window;
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.labelText = message;
+    hud.label.text = message;
     //模式
     hud.mode = model;
     // 隐藏时候从父控件中移除
     hud.removeFromSuperViewOnHide = YES;
     // YES代表需要蒙版效果
-    hud.dimBackground = YES;
+    hud.backgroundColor = [UIColor colorWithWhite:0.f alpha:.2f];
     // 隐藏时候从父控件中移除
     hud.removeFromSuperViewOnHide = YES;
     // X秒之后再消失
-    [hud hide:YES afterDelay:time];
+    [hud hideAnimated:YES afterDelay:time];
 }
 
 + (void)showCustomIcon:(NSString *)iconName Title:(NSString *)title ToView:(UIView *)view
@@ -96,7 +96,7 @@
     if (view == nil) view = (UIView*)[UIApplication sharedApplication].delegate.window;
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.labelText = title;
+    hud.label.text = title;
     // 设置图片
     if ([iconName isEqualToString:@"error.png"] || [iconName isEqualToString:@"success.png"]) {
         hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"MBProgressHUD.bundle/%@", iconName]]];
@@ -110,7 +110,7 @@
     hud.removeFromSuperViewOnHide = YES;
     
     // 1秒之后再消失
-    [hud hide:YES afterDelay:0.9];
+    [hud hideAnimated:YES afterDelay:0.9];
 }
 
 + (void)hideHUDForView:(UIView *)view
@@ -131,7 +131,7 @@
     if (view == nil) view = [UIApplication sharedApplication].keyWindow;
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.labelText = text;
+    hud.label.text = text;
     // 设置图片
     hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"MBProgressHUD.bundle/%@", icon]]];
     // 再设置模式
@@ -141,7 +141,7 @@
     hud.removeFromSuperViewOnHide = YES;
     
     // 1秒之后再消失
-    [hud hide:YES afterDelay:0.7];
+    [hud hideAnimated:YES afterDelay:0.7];
 }
 
 #pragma mark 显示错误信息
@@ -159,11 +159,11 @@
     if (view == nil) view = [UIApplication sharedApplication].keyWindow;
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.labelText = message;
+    hud.label.text = message;
     // 隐藏时候从父控件中移除
     hud.removeFromSuperViewOnHide = YES;
     // YES代表需要蒙版效果
-    hud.dimBackground = YES;
+    hud.backgroundColor = [UIColor colorWithWhite:0.f alpha:.2f];
     return hud;
 }
 

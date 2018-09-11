@@ -10,6 +10,7 @@
 #import "UITextField+LeftImageView.h"
 #import "CBWebVC.h"
 #import "CBTBC.h"
+#import "CBLoginLogic.h"
 
 @interface CBRegisterVC ()
 
@@ -22,6 +23,8 @@
 
 @property (nonatomic, assign) NSInteger authCodeTime;
 @property (nonatomic, strong) NSTimer *messsageTimer;
+
+@property (nonatomic,strong) CBLoginLogic *logic; //逻辑层
 
 @end
 

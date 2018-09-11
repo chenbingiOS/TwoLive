@@ -57,6 +57,7 @@
 		54531CD521467872005D87BA /* CBLoginAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CD421467872005D87BA /* CBLoginAPI.m */; };
 		54531CDA21474CBC005D87BA /* CBLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CD921474CBC005D87BA /* CBLogic.m */; };
 		54531CE321474EE7005D87BA /* CBRegisterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CE221474EE7005D87BA /* CBRegisterAPI.m */; };
+		54531CE721475F33005D87BA /* UIViewController+loading.m in Sources */ = {isa = PBXBuildFile; fileRef = 54531CE621475F32005D87BA /* UIViewController+loading.m */; };
 		8E5F4A2A2DC4257315B3863A /* libPods-FwApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +153,8 @@
 		54531CD921474CBC005D87BA /* CBLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBLogic.m; sourceTree = "<group>"; };
 		54531CE121474EE7005D87BA /* CBRegisterAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBRegisterAPI.h; sourceTree = "<group>"; };
 		54531CE221474EE7005D87BA /* CBRegisterAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBRegisterAPI.m; sourceTree = "<group>"; };
+		54531CE521475F32005D87BA /* UIViewController+loading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+loading.h"; sourceTree = "<group>"; };
+		54531CE621475F32005D87BA /* UIViewController+loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+loading.m"; sourceTree = "<group>"; };
 		BA8E96F2C692180177CB7659 /* Pods-FwApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.release.xcconfig"; sourceTree = "<group>"; };
 		DE64301DFB46888C031105E9 /* Pods-FwApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FwApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +205,7 @@
 		540F1C5521426DF800AA408C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				54531CE421475F0F005D87BA /* UIViewController */,
 				54531CCA214672D3005D87BA /* MBProgressHUD */,
 				54531CC621467239005D87BA /* UITextField */,
 				540F1C6121427A1600AA408C /* NSObject */,
@@ -478,8 +482,8 @@
 		54531CCA214672D3005D87BA /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				54531CCB214672D3005D87BA /* MBProgressHUD+HUD.m */,
 				54531CCC214672D3005D87BA /* MBProgressHUD+HUD.h */,
+				54531CCB214672D3005D87BA /* MBProgressHUD+HUD.m */,
 			);
 			path = MBProgressHUD;
 			sourceTree = "<group>";
@@ -538,6 +542,15 @@
 				54531CE221474EE7005D87BA /* CBRegisterAPI.m */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		54531CE421475F0F005D87BA /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54531CE521475F32005D87BA /* UIViewController+loading.h */,
+				54531CE621475F32005D87BA /* UIViewController+loading.m */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		D3DB74AA1EC40C8D27104F3A /* Pods */ = {
@@ -732,6 +745,7 @@
 				54531CD22146783D005D87BA /* CBLoginLogic.m in Sources */,
 				54531CBF21467063005D87BA /* CBForgetPwdVC.m in Sources */,
 				54531C8E21464221005D87BA /* NSObject+Coding.m in Sources */,
+				54531CE721475F33005D87BA /* UIViewController+loading.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
