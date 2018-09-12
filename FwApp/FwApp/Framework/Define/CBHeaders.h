@@ -15,5 +15,6 @@
 #import "CBUserProfileManager.h"        // 用户信息
 #import "MBProgressHUD+HUD.h"           // HUD
 #import "UIViewController+loading.h"    // HUD
+#import "UIView+Xib.h"                  // View
 
 #endif /* CBHeaders_h */

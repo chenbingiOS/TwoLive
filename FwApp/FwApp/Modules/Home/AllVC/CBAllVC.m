@@ -1,31 +1,23 @@
 //
-//  CBHomeVC.m
+//  CBAllVC.m
 //  FwApp
 //
-//  Created by hxbjt on 2018/9/7.
-//  Copyright © 2018年 fengwo. All rights reserved.
+//  Created by hxbjt on 2018/9/12.
+//  Copyright © 2018年 chenbing. All rights reserved.
 //
 
-#import "CBHomeVC.h"
-#import "CBHomeVCUI.h"
+#import "CBAllVC.h"
 
-@interface CBHomeVC ()
-
-@property (nonatomic, strong) CBHomeVCUI *ownerVCUI;
+@interface CBAllVC ()
 
 @end
 
-@implementation CBHomeVC
-
-- (CBHomeVCUI *)ownerVCUI {
-    if (!_ownerVCUI) {
-        _ownerVCUI = [CBHomeVCUI new];
-    }
-    return _ownerVCUI;
-}
+@implementation CBAllVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor blueColor];
 
 }
 

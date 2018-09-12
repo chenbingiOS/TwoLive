@@ -20,7 +20,7 @@
 #define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 // 安全区域
 #define SafeAreaTopHeight (iPhoneX ? 44 : 20)
-#define SafeAreaNavTopHeight (iPhoneX ? 88 : 64)
+#define SafeAreaNavHeight (iPhoneX ? 88 : 64)
 #define SafeAreaBottomHeight (iPhoneX ? 34 : 0)
 
 // 单例
