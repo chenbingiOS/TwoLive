@@ -14,7 +14,6 @@
 
 @interface CBHomeVCUI () <CBTitleSelectViewDelegate, UIScrollViewDelegate>
 
-
 @end
 
 @implementation CBHomeVCUI

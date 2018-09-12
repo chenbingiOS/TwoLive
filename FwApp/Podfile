@@ -3,15 +3,16 @@ inhibit_all_warnings!
 
 def pods
 
-# UI框架
-pod 'YYKit'
-# 网络
-pod 'AFNetworking'
+pod 'YYKit'                 # UI框架
+pod 'SDWebImage'            # 图片库
+pod 'AFNetworking'          # 网络
 pod 'YTKNetwork'
-# 提示
-pod 'MBProgressHUD'
-# 第三方登录
-pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'
+pod 'MBProgressHUD'         # 提示
+pod 'TYCyclePagerView'      # 轮播图
+pod 'MJRefresh'             # 下拉刷新
+pod 'ZYCornerRadius'        # 圆角处理
+
+pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo' # 第三方登录
 pod 'ShareSDK3/ShareSDKPlatforms/QQ'
 pod 'ShareSDK3/ShareSDKPlatforms/Twitter'
 pod 'ShareSDK3/ShareSDKPlatforms/Facebook'

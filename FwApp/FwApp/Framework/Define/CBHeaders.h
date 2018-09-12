@@ -9,12 +9,16 @@
 #ifndef CBHeaders_h
 #define CBHeaders_h
 
-#import "CBFuncDefine.h"                // 全局宏
-#import <YYKit/YYKit.h>                 // UI库
-#import "UIColor+Color.h"               // 颜色
-#import "CBUserProfileManager.h"        // 用户信息
-#import "MBProgressHUD+HUD.h"           // HUD
-#import "UIViewController+loading.h"    // HUD
-#import "UIView+Xib.h"                  // View
+#import "CBFuncDefine.h"                    // 全局宏
+
+#import <YYKit/YYKit.h>                     // UI库
+#import <MJRefresh/MJRefresh.h>             // 下拉刷新
+#import <UIImageView+WebCache.h>            // 图片
+
+#import "UIColor+Color.h"                   // 颜色
+#import "CBUserProfileManager.h"            // 用户信息
+#import "MBProgressHUD+HUD.h"               // HUD
+#import "UIViewController+loading.h"        // HUD
+#import "UIView+Xib.h"                      // View
 
 #endif /* CBHeaders_h */

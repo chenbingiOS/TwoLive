@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CBAppADCell">
+            <rect key="frame" x="0.0" y="0.0" width="172" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="172" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZh-VR-Cpc">
+                        <rect key="frame" x="3" y="5" width="166" height="40"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home_banner_empty" translatesAutoresizingMaskIntoConstraints="NO" id="syM-a6-nTJ">
+                                <rect key="frame" x="0.0" y="0.0" width="166" height="40"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="syM-a6-nTJ" secondAttribute="trailing" id="8jF-mb-jvn"/>
+                            <constraint firstItem="syM-a6-nTJ" firstAttribute="leading" secondItem="XZh-VR-Cpc" secondAttribute="leading" id="GDQ-ud-4JX"/>
+                            <constraint firstItem="syM-a6-nTJ" firstAttribute="top" secondItem="XZh-VR-Cpc" secondAttribute="top" id="Mvq-m2-H1t"/>
+                            <constraint firstAttribute="bottom" secondItem="syM-a6-nTJ" secondAttribute="bottom" id="UhV-qV-vOf"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                <size key="value" width="0.0" height="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                <real key="value" value="0.40000000000000002"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColorFromUIColor">
+                                <color key="value" white="0.4948459201" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="XZh-VR-Cpc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="2Mw-me-5uw"/>
+                <constraint firstAttribute="bottom" secondItem="XZh-VR-Cpc" secondAttribute="bottom" constant="5" id="UyI-oh-V6D"/>
+                <constraint firstAttribute="trailing" secondItem="XZh-VR-Cpc" secondAttribute="trailing" constant="3" id="glR-bm-BB3"/>
+                <constraint firstItem="XZh-VR-Cpc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="zME-6B-Yq4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="172" height="50"/>
+            <connections>
+                <outlet property="imageView" destination="syM-a6-nTJ" id="Uba-SM-JuO"/>
+            </connections>
+            <point key="canvasLocation" x="13" y="36"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Home_banner_empty" width="331" height="130"/>
+    </resources>
+</document>

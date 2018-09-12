@@ -70,6 +70,16 @@
 		54FF0D3B21489D0100D96C63 /* UIView+Xib.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF0D3A21489D0100D96C63 /* UIView+Xib.m */; };
 		54FF0D4121489FA400D96C63 /* CBHotVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF0D4021489FA400D96C63 /* CBHotVC.m */; };
 		54FF0D4421489FB300D96C63 /* CBAllVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF0D4321489FB300D96C63 /* CBAllVC.m */; };
+		54FF0D482148A2F600D96C63 /* CBHotVCUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF0D472148A2F600D96C63 /* CBHotVCUI.m */; };
+		54FF0D4C2148A53100D96C63 /* CBHotLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF0D4B2148A53100D96C63 /* CBHotLogic.m */; };
+		54FF0D512148A65D00D96C63 /* CBAppLiveAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF0D502148A65D00D96C63 /* CBAppLiveAPI.m */; };
+		54FF0D552148ACFA00D96C63 /* CBAppADCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF0D532148ACF900D96C63 /* CBAppADCell.m */; };
+		54FF0D562148ACFA00D96C63 /* CBAppADCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54FF0D542148ACFA00D96C63 /* CBAppADCell.xib */; };
+		54FF0D592148AD0C00D96C63 /* CBAppADVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF0D572148AD0C00D96C63 /* CBAppADVO.m */; };
+		54FF0D5C2148B03A00D96C63 /* CBAppADAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF0D5B2148B03A00D96C63 /* CBAppADAPI.m */; };
+		54FF0D602148B79E00D96C63 /* CBAppLiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF0D5D2148B79E00D96C63 /* CBAppLiveCell.m */; };
+		54FF0D612148B79E00D96C63 /* CBAppLiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54FF0D5F2148B79E00D96C63 /* CBAppLiveCell.xib */; };
+		54FF0D682148B80000D96C63 /* UIImageView+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF0D652148B80000D96C63 /* UIImageView+RoundedCorner.m */; };
 		8E5F4A2A2DC4257315B3863A /* libPods-FwApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +200,24 @@
 		54FF0D4021489FA400D96C63 /* CBHotVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBHotVC.m; sourceTree = "<group>"; };
 		54FF0D4221489FB300D96C63 /* CBAllVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBAllVC.h; sourceTree = "<group>"; };
 		54FF0D4321489FB300D96C63 /* CBAllVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBAllVC.m; sourceTree = "<group>"; };
+		54FF0D462148A2F600D96C63 /* CBHotVCUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBHotVCUI.h; sourceTree = "<group>"; };
+		54FF0D472148A2F600D96C63 /* CBHotVCUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBHotVCUI.m; sourceTree = "<group>"; };
+		54FF0D4A2148A53100D96C63 /* CBHotLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBHotLogic.h; sourceTree = "<group>"; };
+		54FF0D4B2148A53100D96C63 /* CBHotLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBHotLogic.m; sourceTree = "<group>"; };
+		54FF0D4F2148A65D00D96C63 /* CBAppLiveAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBAppLiveAPI.h; sourceTree = "<group>"; };
+		54FF0D502148A65D00D96C63 /* CBAppLiveAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBAppLiveAPI.m; sourceTree = "<group>"; };
+		54FF0D522148ACF900D96C63 /* CBAppADCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAppADCell.h; sourceTree = "<group>"; };
+		54FF0D532148ACF900D96C63 /* CBAppADCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAppADCell.m; sourceTree = "<group>"; };
+		54FF0D542148ACFA00D96C63 /* CBAppADCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBAppADCell.xib; sourceTree = "<group>"; };
+		54FF0D572148AD0C00D96C63 /* CBAppADVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAppADVO.m; sourceTree = "<group>"; };
+		54FF0D582148AD0C00D96C63 /* CBAppADVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAppADVO.h; sourceTree = "<group>"; };
+		54FF0D5A2148B03A00D96C63 /* CBAppADAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBAppADAPI.h; sourceTree = "<group>"; };
+		54FF0D5B2148B03A00D96C63 /* CBAppADAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBAppADAPI.m; sourceTree = "<group>"; };
+		54FF0D5D2148B79E00D96C63 /* CBAppLiveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAppLiveCell.m; sourceTree = "<group>"; };
+		54FF0D5E2148B79E00D96C63 /* CBAppLiveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAppLiveCell.h; sourceTree = "<group>"; };
+		54FF0D5F2148B79E00D96C63 /* CBAppLiveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBAppLiveCell.xib; sourceTree = "<group>"; };
+		54FF0D632148B80000D96C63 /* UIImageView+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+RoundedCorner.h"; sourceTree = "<group>"; };
+		54FF0D652148B80000D96C63 /* UIImageView+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+RoundedCorner.m"; sourceTree = "<group>"; };
 		BA8E96F2C692180177CB7659 /* Pods-FwApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.release.xcconfig"; sourceTree = "<group>"; };
 		DE64301DFB46888C031105E9 /* Pods-FwApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FwApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FwApp/Pods-FwApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F1BEF1E1B2851D848FC5530D /* libPods-FwApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FwApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +269,7 @@
 		540F1C5521426DF800AA408C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				54FF0D622148B80000D96C63 /* UIImageView */,
 				54FF0D3821489CFB00D96C63 /* UIView */,
 				54531CE421475F0F005D87BA /* UIViewController */,
 				54531CCA214672D3005D87BA /* MBProgressHUD */,
@@ -640,6 +669,8 @@
 			children = (
 				54FF0D3321489AE500D96C63 /* CBAppLiveVO.h */,
 				54FF0D3221489AE500D96C63 /* CBAppLiveVO.m */,
+				54FF0D582148AD0C00D96C63 /* CBAppADVO.h */,
+				54FF0D572148AD0C00D96C63 /* CBAppADVO.m */,
 			);
 			path = VO;
 			sourceTree = "<group>";
@@ -658,7 +689,6 @@
 			isa = PBXGroup;
 			children = (
 				54FF0D2A214899D500D96C63 /* VC */,
-				54FF0D2B214899F200D96C63 /* VO */,
 				54FF0D2C214899F700D96C63 /* View */,
 			);
 			path = HomeVC;
@@ -667,8 +697,11 @@
 		54FF0D3621489B3900D96C63 /* HotVC */ = {
 			isa = PBXGroup;
 			children = (
-				54FF0D3F21489FA400D96C63 /* CBHotVC.h */,
-				54FF0D4021489FA400D96C63 /* CBHotVC.m */,
+				54FF0D452148A22900D96C63 /* VC */,
+				54FF0D4E2148A59400D96C63 /* View */,
+				54FF0D492148A52100D96C63 /* Logic */,
+				54FF0D4D2148A53C00D96C63 /* API */,
+				54FF0D2B214899F200D96C63 /* VO */,
 			);
 			path = HotVC;
 			sourceTree = "<group>";
@@ -689,6 +722,59 @@
 				54FF0D3A21489D0100D96C63 /* UIView+Xib.m */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		54FF0D452148A22900D96C63 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				54FF0D3F21489FA400D96C63 /* CBHotVC.h */,
+				54FF0D4021489FA400D96C63 /* CBHotVC.m */,
+				54FF0D462148A2F600D96C63 /* CBHotVCUI.h */,
+				54FF0D472148A2F600D96C63 /* CBHotVCUI.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		54FF0D492148A52100D96C63 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				54FF0D4A2148A53100D96C63 /* CBHotLogic.h */,
+				54FF0D4B2148A53100D96C63 /* CBHotLogic.m */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		54FF0D4D2148A53C00D96C63 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				54FF0D4F2148A65D00D96C63 /* CBAppLiveAPI.h */,
+				54FF0D502148A65D00D96C63 /* CBAppLiveAPI.m */,
+				54FF0D5A2148B03A00D96C63 /* CBAppADAPI.h */,
+				54FF0D5B2148B03A00D96C63 /* CBAppADAPI.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		54FF0D4E2148A59400D96C63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54FF0D5E2148B79E00D96C63 /* CBAppLiveCell.h */,
+				54FF0D5D2148B79E00D96C63 /* CBAppLiveCell.m */,
+				54FF0D5F2148B79E00D96C63 /* CBAppLiveCell.xib */,
+				54FF0D522148ACF900D96C63 /* CBAppADCell.h */,
+				54FF0D532148ACF900D96C63 /* CBAppADCell.m */,
+				54FF0D542148ACFA00D96C63 /* CBAppADCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54FF0D622148B80000D96C63 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				54FF0D632148B80000D96C63 /* UIImageView+RoundedCorner.h */,
+				54FF0D652148B80000D96C63 /* UIImageView+RoundedCorner.m */,
+			);
+			path = UIImageView;
 			sourceTree = "<group>";
 		};
 		D3DB74AA1EC40C8D27104F3A /* Pods */ = {
@@ -773,12 +859,14 @@
 				54531C5E21460875005D87BA /* guide_1@3x.png in Resources */,
 				54531C6021460875005D87BA /* guide_3@3x.png in Resources */,
 				5426E19B21420DCF008AF44A /* LaunchScreen.storyboard in Resources */,
+				54FF0D612148B79E00D96C63 /* CBAppLiveCell.xib in Resources */,
 				54531C5D21460875005D87BA /* guide_X3@3x.png in Resources */,
 				54531C6121460875005D87BA /* guide_X2@3x.png in Resources */,
 				54531CC121467063005D87BA /* CBLoginVC.xib in Resources */,
 				54531C6221460875005D87BA /* guide_2@3x.png in Resources */,
 				54531C5F21460875005D87BA /* guide_X1@3x.png in Resources */,
 				54531CBE21467063005D87BA /* CBForgetPwdVC.xib in Resources */,
+				54FF0D562148ACFA00D96C63 /* CBAppADCell.xib in Resources */,
 				5426E19821420DCF008AF44A /* Assets.xcassets in Resources */,
 				54FF0D3121489AB400D96C63 /* CBTitleSelectView.xib in Resources */,
 				54531CBD21467063005D87BA /* CBRegisterVC.xib in Resources */,
@@ -827,11 +915,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FwApp/Pods-FwApp-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
 				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
 			);
@@ -849,6 +939,7 @@
 			files = (
 				540F1C44214269C000AA408C /* CBAnchorVC.m in Sources */,
 				540F1C5921426E1100AA408C /* UIColor+Color.m in Sources */,
+				54FF0D552148ACFA00D96C63 /* CBAppADCell.m in Sources */,
 				54531C98214649C2005D87BA /* CBArchiverTool.m in Sources */,
 				54531CDA21474CBC005D87BA /* CBLogic.m in Sources */,
 				54531CFB2147BFED005D87BA /* CBHomeVCUI.m in Sources */,
@@ -866,6 +957,7 @@
 				54531CBC21467063005D87BA /* CBRegisterVC.m in Sources */,
 				54531CFE2147C81A005D87BA /* CBRootVC.m in Sources */,
 				54531C9D21464DA2005D87BA /* CBRequestAPI.m in Sources */,
+				54FF0D482148A2F600D96C63 /* CBHotVCUI.m in Sources */,
 				540F1C41214269A300AA408C /* CBVideoVC.m in Sources */,
 				54531CCD214672D3005D87BA /* MBProgressHUD+HUD.m in Sources */,
 				5426E19E21420DCF008AF44A /* main.m in Sources */,
@@ -874,6 +966,7 @@
 				54FF0D3421489AE600D96C63 /* CBAppLiveVO.m in Sources */,
 				54531CAA214656F7005D87BA /* CBUrlArgumentsFilter.m in Sources */,
 				540F1C6C21427F0100AA408C /* CBGuideViewCell.m in Sources */,
+				54FF0D682148B80000D96C63 /* UIImageView+RoundedCorner.m in Sources */,
 				54531CC92146723A005D87BA /* UITextField+LeftImageView.m in Sources */,
 				540F1C3E2142699700AA408C /* CBHomeVC.m in Sources */,
 				54531C8B21464209005D87BA /* CBUserProfileVO.m in Sources */,
@@ -881,21 +974,26 @@
 				5426E19021420DCE008AF44A /* AppDelegate.m in Sources */,
 				54531CC021467063005D87BA /* CBLoginVC.m in Sources */,
 				54531CA121465098005D87BA /* AESCipher.m in Sources */,
+				54FF0D592148AD0C00D96C63 /* CBAppADVO.m in Sources */,
 				54531CA421465286005D87BA /* CBRequestHeaderVO.m in Sources */,
 				54531C9421464934005D87BA /* CBUserProfileLogic.m in Sources */,
 				540F1C5421426DBC00AA408C /* AppDelegate+AppServer.m in Sources */,
 				54531CA7214655C9005D87BA /* CBUserProfileAPI.m in Sources */,
 				54531CC5214670A9005D87BA /* CBBaseWebViewVC.m in Sources */,
 				540F1C4A214269D500AA408C /* CBProfileVC.m in Sources */,
+				54FF0D512148A65D00D96C63 /* CBAppLiveAPI.m in Sources */,
 				54531CE321474EE7005D87BA /* CBRegisterAPI.m in Sources */,
 				540F1C6421427A4000AA408C /* NSObject+PerformBlock.m in Sources */,
 				54531CD22146783D005D87BA /* CBLoginLogic.m in Sources */,
 				54FF0D4421489FB300D96C63 /* CBAllVC.m in Sources */,
+				54FF0D602148B79E00D96C63 /* CBAppLiveCell.m in Sources */,
 				54531CBF21467063005D87BA /* CBForgetPwdVC.m in Sources */,
+				54FF0D5C2148B03A00D96C63 /* CBAppADAPI.m in Sources */,
 				54531C8E21464221005D87BA /* NSObject+Coding.m in Sources */,
 				54FF0D4121489FA400D96C63 /* CBHotVC.m in Sources */,
 				54531CF521479825005D87BA /* CBUserProfileManager.m in Sources */,
 				54531CE721475F33005D87BA /* UIViewController+loading.m in Sources */,
+				54FF0D4C2148A53100D96C63 /* CBHotLogic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
